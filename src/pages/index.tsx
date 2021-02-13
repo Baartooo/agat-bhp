@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import { Start } from '../+start/Start.component';
 import { graphql } from 'gatsby';
+
+import { Start } from '../+start/Start.component';
 
 const Home: FC = (props) => {
   const {
