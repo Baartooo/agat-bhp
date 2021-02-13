@@ -1,12 +1,12 @@
 import favicon from 'assets/images/favicon.png';
 
-const title = 'Create Ueno App';
-const description = 'The easiest and fastest way to create new projects.';
+const title = 'Agat BHP';
+const description = 'Kompleksowa obsługa BHP i PPOŻ';
 
 export const helmet = {
   title,
-  titleTemplate: '%s - Ueno',
-  htmlAttributes: { lang: 'en' },
+  titleTemplate: 'Agat BHP',
+  htmlAttributes: { lang: 'pl' },
   meta: [
     { name: 'description', content: description },
     {
