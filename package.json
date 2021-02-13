@@ -1,0 +1,117 @@
+{
+  "name": "ueno-gatsby-starter",
+  "description": "Opinionated Gatsby starter by Ueno",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "starter",
+    "react",
+    "typescript",
+    "gatsby-starter",
+    "ueno"
+  ],
+  "contributors": [
+    "Birkir Gudjonsson <birkir.gudjonsson@gmail.com>",
+    "Jérémy Barbet <jeremgraph@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ueno-llc/ueno-gatsby-starter"
+  },
+  "scripts": {
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "start": "gatsby serve --port ${PORT:-3000}",
+    "clean": "rimraf .cache public",
+    "lint": "npm run prettier && npm run tslint && npm run stylelint",
+    "tslint": "tslint --fix 'src/**/*.{ts,tsx}' --project tsconfig.json",
+    "stylelint": "stylelint 'src/**/*.scss' --syntax scss",
+    "prettier": "prettier --list-different '**/*.{ts,tsx,js,jsx,json,md}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,md}": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "tslint --fix"
+    ]
+  },
+  "stylelint": {
+    "extends": "stylelint-config-recommended",
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "if",
+            "else",
+            "mixin",
+            "each",
+            "include",
+            "function",
+            "return",
+            "warn",
+            "for"
+          ]
+        }
+      ],
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "global"
+          ]
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "printWidth": 100
+  },
+  "dependencies": {
+    "gatsby": "2.20.12",
+    "gatsby-image": "2.3.1",
+    "gatsby-plugin-config": "1.0.7",
+    "gatsby-plugin-layout": "1.2.1",
+    "gatsby-plugin-manifest": "2.3.3",
+    "gatsby-plugin-react-helmet": "3.2.1",
+    "gatsby-plugin-react-svg": "3.0.0",
+    "gatsby-plugin-sharp": "2.5.3",
+    "gatsby-plugin-typescript": "2.3.1",
+    "gatsby-transformer-sharp": "2.4.3",
+    "lodash": "4.17.15",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-helmet": "5.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.0",
+    "@babel/plugin-proposal-decorators": "7.8.3",
+    "@types/gsap": "1.20.2",
+    "@types/lodash": "4.14.149",
+    "@types/node": "13.11.0",
+    "@types/react": "16.9.32",
+    "@types/react-dom": "16.9.6",
+    "@types/react-helmet": "5.0.15",
+    "classnames": "2.2.6",
+    "classnames-loader": "2.1.0",
+    "node-sass": "4.13.1",
+    "prettier": "2.0.2",
+    "rimraf": "3.0.2",
+    "sass-loader": "8.0.2",
+    "stylelint": "13.2.1",
+    "stylelint-config-recommended": "3.0.0",
+    "tslint": "6.1.1",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-react": "4.2.0",
+    "typescript": "3.8.3"
+  }
+}
