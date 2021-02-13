@@ -1,5 +1,4 @@
 import favicon from 'assets/images/favicon.png';
-import share from 'assets/images/share.png';
 
 const title = 'Create Ueno App';
 const description = 'The easiest and fastest way to create new projects.';
@@ -18,19 +17,6 @@ export const helmet = {
     { name: 'msapplication-navbutton-color', content: '#000' },
     { name: 'msapplication-TileColor', content: '#000' },
     { name: 'theme-color', content: '#000' },
-
-    { property: 'og:title', content: title },
-    { property: 'og:image', content: share },
-    { property: 'og:image:width', content: '880px' },
-    { property: 'og:image:height', content: '440px' },
-    { property: 'og:image:alt', content: description },
-
-    { name: 'twitter:title', content: title },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:image', content: share },
-    { name: 'twitter:site', content: '@uenodotco' },
-    { name: 'twitter:creator', content: '@uenodotco' },
-    { name: 'twitter:description', content: description },
   ],
   link: [{ rel: 'icon', type: 'image/x-icon', href: favicon }],
 };
