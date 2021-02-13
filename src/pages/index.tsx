@@ -1,10 +1,37 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React, { FC } from 'react';
+import { Start } from '../+start/Start.component';
+import { graphql } from 'gatsby';
 
-// tslint:disable no-default-export
-export default () => (
-  <>
-    <Helmet title="Home" />
-    let's go with this
-  </>
-);
+const Home: FC = (props) => {
+  const {
+    data: {
+      backgroundStart,
+    },
+  } = props;
+
+  return (
+    <>
+      <Start background={backgroundStart.childImageSharp.fixed} />
+    </>
+  );
+};
+
+export default Home;
+
+export const query = graphql`
+query {
+  backgroundStart: file(name: {eq: "background-start"}) {
+    childImageSharp {
+      fixed(width: 1920) {
+        aspectRatio
+        srcWebp
+        srcSetWebp
+        src
+        srcSet
+        height
+        width
+      }
+    }
+  }
+}
+`;
