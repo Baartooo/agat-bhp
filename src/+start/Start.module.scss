@@ -36,7 +36,7 @@
 
 .start__logo {
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 
   width: 40vw;
   visibility: hidden;
@@ -46,6 +46,8 @@
   }
 
   @media (min-width: $min-tablet) {
+    margin-bottom: 30px;
+    
     width: 20vw;
   }
 
@@ -58,6 +60,7 @@
 
 .start__title {
   @include rf(16, 43);
+  margin-bottom: 5px;
 
   font-weight: 700;
 

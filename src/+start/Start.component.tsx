@@ -33,9 +33,9 @@ export const Start: FC<IStart> = ({ background, content }) => {
         .set([refFirstLine.current, refSecondLine.current], { autoAlpha: 0 })
         .set(path, { transformOrigin: '50% 50%', autoAlpha: 0 })
         .to(refLogo.current, {
-          delay: 1,
+          delay: 1.1,
           autoAlpha: 1,
-          duration: 1,
+          duration: .9,
           ease: 'power2.out',
         })
         .to(refLogo.current, {
