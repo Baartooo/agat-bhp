@@ -88,6 +88,7 @@
     "gatsby-plugin-typescript": "2.3.1",
     "gatsby-source-filesystem": "^2.11.0",
     "gatsby-transformer-sharp": "2.4.3",
+    "gsap": "^3.6.0",
     "lodash": "4.17.15",
     "react": "16.13.1",
     "react-dom": "16.13.1",
