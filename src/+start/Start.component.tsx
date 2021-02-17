@@ -22,8 +22,7 @@ export const Start: FC<IStart> = ({ background, content }) => {
   let tl = gsap.timeline();
 
   useEffect(() => {
-
-    if (refLogo.current !== null) {
+    if (refLogo.current !== null && refFirstLine.current !== null && refSecondLine.current !== null) {
       const path = document.querySelector('#logoAnimatableCircle');
       tl = gsap.timeline();
       tl
@@ -39,20 +38,21 @@ export const Start: FC<IStart> = ({ background, content }) => {
           duration: 1,
           ease: 'power2.out',
         })
+        .to(refLogo.current, {
+          yPercent: 0,
+          duration: 1.5,
+          ease: 'power2.inOut',
+        })
         .to(path, {
           autoAlpha: 1,
           rotate: 360,
           duration: 1.5,
           ease: 'power2.out',
-        }, '<+0.8')
-        .to(refLogo.current, {
-          yPercent: 0,
-          duration: 1.5,
-          ease: 'power2.inOut',
         }, '<')
         .to([refFirstLine.current, refSecondLine.current], {
           autoAlpha: 1,
           duration: 1,
+          stagger: .2,
           ease: 'power2.out',
         });
 

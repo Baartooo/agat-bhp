@@ -24,7 +24,7 @@ const Home: FC<IHome> = (props) => {
   const content = {
     start: {
       firstLine: 'kompleksowa obsługa bhp i ppoż',
-      secondLine: 'bezpieczeństwo jest w twoich rękach',
+      secondLine: 'bezpieczeństwo jest w twoich rękach!',
     },
   };
 
