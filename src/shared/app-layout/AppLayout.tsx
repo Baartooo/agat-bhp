@@ -9,8 +9,6 @@ interface AppLayoutProps {
   children: ReactNode;
 }
 
-const isDev = process.env.NODE_ENV === 'development';
-
 // tslint:disable no-default-export
 export default ({ children }: AppLayoutProps) => (
   <div className={s.layout}>
