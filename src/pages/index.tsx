@@ -1,18 +1,36 @@
 import React, { FC } from 'react';
+import { FixedObject } from 'gatsby-image';
 import { graphql } from 'gatsby';
 
 import { Start } from '../+start/Start.component';
 
-const Home: FC = (props) => {
+interface IHome {
+  data: {
+    backgroundStart: {
+      childImageSharp: {
+        fixed: FixedObject
+      }
+    }
+  }
+}
+
+const Home: FC<IHome> = (props) => {
   const {
     data: {
       backgroundStart,
     },
   } = props;
 
+  const content = {
+    start: {
+      firstLine: 'kompleksowa obsługa bhp i ppoż',
+      secondLine: 'bezpieczeństwo jest w twoich rękach',
+    },
+  };
+
   return (
     <>
-      <Start background={backgroundStart.childImageSharp.fixed} />
+      <Start content={content.start} background={backgroundStart.childImageSharp.fixed} />
     </>
   );
 };
