@@ -19,4 +19,8 @@
   visibility: hidden;
 
   z-index: 100;
+
+  @media (min-width: $min-tablet) {
+    display: none;
+  }
 }

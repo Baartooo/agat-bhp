@@ -20,21 +20,67 @@ export const Navigation: FC<INavigation> = ({ refNav }) => {
   const refHamburger = useRef<HTMLDivElement>(null);
   let tl = gsap.timeline();
 
-  const openOrHideNavDependingOnState = () => {
-    const ALPHA = isMobileNavOpen ? 0 : 1;
-
+  const openNavAndSetState = () => {
     if (refNavMobile.current && refHamburger.current) {
+      const bars = refHamburger.current.children;
+
       tl.kill();
       tl = gsap.timeline();
 
       tl
         .to(refNavMobile.current, {
-          autoAlpha: ALPHA,
+          autoAlpha: 1,
+          duration: .3,
+          ease: 'power2.out',
         })
-        .to(refHamburger.current, {
-          
-        });
+        .to(bars[0], {
+          yPercent: 200,
+          duration: .3,
+          ease: 'power2.out',
+        }, '<')
+        .to(bars[2], {
+          yPercent: -200,
+          duration: .3,
+          ease: 'power2.out',
+        }, '<')
+        .to([bars[0], bars[1]], {
+          rotation: -45,
+          duration: .3,
+          ease: 'power2.out',
+        })
+        .to(bars[2], {
+          rotation: 45,
+          duration: .3,
+          ease: 'power2.out',
+          onComplete: () => setIsMobileNavOpen(true),
+        }, '<');
+    }
+  };
 
+  const closeNavAndSetState = () => {
+    if (refNavMobile.current && refHamburger.current) {
+      const bars = refHamburger.current.children;
+
+      tl.kill();
+      tl = gsap.timeline();
+
+      tl
+        .to(bars, {
+          rotation: 0,
+          duration: .3,
+          ease: 'power2.out',
+        })
+        .to(bars, {
+          yPercent: 0,
+          duration: .3,
+          ease: 'power2.out',
+        })
+        .to(refNavMobile.current, {
+          autoAlpha: 0,
+          duration: .3,
+          ease: 'power2.out',
+          onComplete: () => setIsMobileNavOpen(false),
+        }, '<');
     }
   };
 
@@ -59,7 +105,11 @@ export const Navigation: FC<INavigation> = ({ refNav }) => {
         <NavItem text={'oferta'} onClick={() => null} isDesktop />
         <NavItem text={'kontakt'} onClick={() => null} isDesktop />
 
-        <div className={s.navigation__hamburger} onClick={openOrHideNavDependingOnState} ref={refHamburger}>
+        <div
+          className={s.navigation__hamburger}
+          onClick={isMobileNavOpen ? closeNavAndSetState : openNavAndSetState}
+          ref={refHamburger}
+        >
           <div className={s.navigation__bar} />
           <div className={s.navigation__bar} />
           <div className={s.navigation__bar} />
