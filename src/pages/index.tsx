@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { FixedObject } from 'gatsby-image';
 import { graphql } from 'gatsby';
 
-import { Start } from '../components/+start/Start.component';
-import { About } from '../components/+about/About.component';
+import { Start } from 'components/+start/Start.component';
+import { About } from 'components/+about/About.component';
 
 interface IHome {
   data: {

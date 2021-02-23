@@ -3,7 +3,7 @@ import GatsbyImage, { FixedObject } from 'gatsby-image';
 
 import gsap from 'gsap';
 
-import { NavigationContent, StartContent } from '../../types';
+import { NavigationContent, StartContent } from 'types';
 
 import { Navigation } from '../+navigation/Navigation.component';
 

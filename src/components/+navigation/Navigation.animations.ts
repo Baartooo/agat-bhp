@@ -2,7 +2,7 @@ import { RefObject } from 'react';
 import gsap from 'gsap';
 
 export const showNavigation = (refNavigation: RefObject<HTMLDivElement>) => {
-  if (refNavigation.current !== null) {
+  if (refNavigation.current) {
     gsap.to(refNavigation.current, {
       yPercent: 0,
       autoAlpha: 1,
@@ -12,7 +12,7 @@ export const showNavigation = (refNavigation: RefObject<HTMLDivElement>) => {
 };
 
 export const hideNavigation = (refNavigation: RefObject<HTMLDivElement>) => {
-  if (refNavigation.current !== null) {
+  if (refNavigation.current) {
     gsap.to(refNavigation.current, {
       yPercent: -100,
       duration: .3,
