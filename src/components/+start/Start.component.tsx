@@ -3,7 +3,7 @@ import GatsbyImage, { FixedObject } from 'gatsby-image';
 
 import gsap from 'gsap';
 
-import { NavigationContent, StartContent } from '../types';
+import { NavigationContent, StartContent } from 'types';
 
 import { Navigation } from '../+navigation/Navigation.component';
 
@@ -62,6 +62,7 @@ export const Start: FC<IStart> = ({ background, content, navigationContent }) =>
         })
         .to(refNav.current, {
           autoAlpha: 1,
+          yPercent: 0,
         }, '<+0.5');
 
       return () => {

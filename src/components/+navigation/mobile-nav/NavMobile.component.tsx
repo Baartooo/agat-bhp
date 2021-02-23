@@ -2,7 +2,7 @@ import React, { FC, RefObject } from 'react';
 
 import { NavigationContent } from 'types';
 
-import { NavItem } from 'shared/nav-item/Navitem.component';
+import { NavItem } from 'shared/components/nav-item/Navitem.component';
 
 import s from './NavMobile.module.scss';
 
