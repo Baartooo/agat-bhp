@@ -2,7 +2,9 @@ import React, { FC, ReactNode, RefObject, useEffect, useRef, useState } from 're
 
 import gsap from 'gsap';
 
-import { NavItem } from './nav-item/Navitem.component';
+import { NavigationContent } from '../types';
+
+import { NavItem } from 'shared/nav-item/Navitem.component';
 import { NavMobile } from './mobile-nav/NavMobile.component';
 
 import AgatBHP from 'assets/svg/AgatBHP-logo-cut.svg';
@@ -11,10 +13,11 @@ import s from './Navigation.module.scss';
 
 interface INavigation {
   refNav: RefObject<HTMLDivElement>;
+  navigationContent: NavigationContent;
   children?: ReactNode
 }
 
-export const Navigation: FC<INavigation> = ({ refNav }) => {
+export const Navigation: FC<INavigation> = ({ refNav, navigationContent }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
   const refNavMobile = useRef<HTMLDivElement>(null);
   const refHamburger = useRef<HTMLDivElement>(null);
@@ -100,16 +103,16 @@ export const Navigation: FC<INavigation> = ({ refNav }) => {
 
   return (
     <>
-      <NavMobile refWrapper={refNavMobile} />
+      <NavMobile refWrapper={refNavMobile} navigationContent={navigationContent} />
       <nav className={s.navigation} ref={refNav}>
         <div className={s.navigation__logo}>
           <AgatBHP className={s.navigation__logoSvg} />
         </div>
 
-        <NavItem text={'start'} onClick={() => null} isDesktop />
-        <NavItem text={'o nas'} onClick={() => null} isDesktop />
-        <NavItem text={'oferta'} onClick={() => null} isDesktop />
-        <NavItem text={'kontakt'} onClick={() => null} isDesktop />
+        <NavItem text={navigationContent.start} onClick={() => null} isDesktop />
+        <NavItem text={navigationContent.about} onClick={() => null} isDesktop />
+        <NavItem text={navigationContent.offer} onClick={() => null} isDesktop />
+        <NavItem text={navigationContent.contact} onClick={() => null} isDesktop />
 
         <div
           className={s.navigation__hamburger}

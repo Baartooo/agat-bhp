@@ -26,11 +26,21 @@ const Home: FC<IHome> = (props) => {
       firstLine: 'kompleksowa obsługa bhp i ppoż',
       secondLine: 'bezpieczeństwo jest w twoich rękach!',
     },
+    navigation: {
+      start: 'start',
+      about: 'o nas',
+      offer: 'oferta',
+      contact: 'kontakt',
+    },
   };
 
   return (
     <>
-      <Start content={content.start} background={backgroundStart.childImageSharp.fixed} />
+      <Start
+        content={content.start}
+        background={backgroundStart.childImageSharp.fixed}
+        navigationContent={content.navigation}
+      />
     </>
   );
 };

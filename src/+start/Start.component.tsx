@@ -3,7 +3,7 @@ import GatsbyImage, { FixedObject } from 'gatsby-image';
 
 import gsap from 'gsap';
 
-import { StartData } from '../types';
+import { NavigationContent, StartContent } from '../types';
 
 import { Navigation } from '../+navigation/Navigation.component';
 
@@ -14,10 +14,11 @@ import s from './Start.module.scss';
 
 interface IStart {
   background: FixedObject;
-  content: StartData;
+  content: StartContent;
+  navigationContent: NavigationContent;
 }
 
-export const Start: FC<IStart> = ({ background, content }) => {
+export const Start: FC<IStart> = ({ background, content, navigationContent }) => {
   const refLogo = useRef<HTMLDivElement>(null);
   const refFirstLine = useRef<HTMLDivElement>(null);
   const refSecondLine = useRef<HTMLDivElement>(null);
@@ -72,7 +73,7 @@ export const Start: FC<IStart> = ({ background, content }) => {
 
   return (
     <>
-      <Navigation refNav={refNav} />
+      <Navigation refNav={refNav} navigationContent={navigationContent} />
       <div className={s.start}>
         <div className={s.start__background}>
           <GatsbyImage

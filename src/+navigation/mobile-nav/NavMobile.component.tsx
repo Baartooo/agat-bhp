@@ -1,20 +1,23 @@
 import React, { FC, RefObject } from 'react';
 
-import { NavItem } from '../nav-item/Navitem.component';
+import { NavigationContent } from 'types';
+
+import { NavItem } from 'shared/nav-item/Navitem.component';
 
 import s from './NavMobile.module.scss';
 
 interface INavMobile {
   refWrapper: RefObject<HTMLDivElement>;
+  navigationContent: NavigationContent;
 }
 
-export const NavMobile: FC<INavMobile> = ({ refWrapper }) => {
+export const NavMobile: FC<INavMobile> = ({ refWrapper, navigationContent }) => {
   return (
     <div className={s.navMobile} ref={refWrapper}>
-      <NavItem text={'start'} onClick={() => null} />
-      <NavItem text={'o nas'} onClick={() => null} />
-      <NavItem text={'oferta'} onClick={() => null} />
-      <NavItem text={'kontakt'} onClick={() => null} />
+      <NavItem text={navigationContent.start} onClick={() => null} />
+      <NavItem text={navigationContent.about} onClick={() => null} />
+      <NavItem text={navigationContent.offer} onClick={() => null} />
+      <NavItem text={navigationContent.contact} onClick={() => null} />
     </div>
   );
 };
