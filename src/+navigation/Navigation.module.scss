@@ -13,10 +13,15 @@
   height: 70px;
 
   align-items: center;
+  justify-content: space-between;
 
-  visibility: hidden;
+  //visibility: hidden;
 
   z-index: 100;
+
+  @media (min-width: $min-tablet) {
+    justify-content: flex-start;
+  }
 }
 
 .navigation__logo {
@@ -37,5 +42,26 @@
     path {
       fill: $color-white;
     }
+  }
+}
+
+.navigation__hamburger {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 35px;
+  height: 25px;
+}
+
+.navigation__bar {
+  width: 100%;
+  height: 5px;
+
+  background-color: $color-white;
+
+  @media (min-width: $min-tablet) {
+    display: none;
   }
 }

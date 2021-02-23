@@ -3,7 +3,6 @@
 .nav-item {
   position: relative;
 
-  margin-right: 45px;
   padding: 8px 17px;
 
   font-size: 18px;
@@ -13,6 +12,26 @@
   white-space: nowrap;
 
   cursor: pointer;
+
+  &.mobile {
+    display: flex;
+
+    margin: 10px 0;
+
+    width: 150px;
+
+    justify-content: center;
+  }
+
+  &.desktop {
+    display: none;
+
+    margin-right: 45px;
+
+    @media (min-width: $min-tablet) {
+      display: block;
+    }
+  }
 
   &::before {
     content: '';
