@@ -26,7 +26,7 @@ export const Start: FC<IStart> = ({ background, content, navigationContent }) =>
   let tl = gsap.timeline();
 
   useEffect(() => {
-    if (refLogo.current !== null && refFirstLine.current !== null && refSecondLine.current !== null && refNav.current !== null) {
+    if (refLogo.current && refFirstLine.current && refSecondLine.current && refNav.current) {
       const path = document.querySelector('#logoAnimatableCircle');
       tl = gsap.timeline();
       tl

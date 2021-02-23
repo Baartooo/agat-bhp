@@ -94,7 +94,7 @@ export const Navigation: FC<INavigation> = ({ refNav, navigationContent }) => {
   };
 
   useEffect(() => {
-    if (refNavMobile.current !== null) {
+    if (refNavMobile.current) {
       gsap.set(refNavMobile.current, {
         autoAlpha: 0,
       });
