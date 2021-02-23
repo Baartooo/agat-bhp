@@ -1,0 +1,86 @@
+@import "../../styles/config";
+
+.nav-item {
+  position: relative;
+
+  padding: 8px 17px;
+
+  font-size: 18px;
+  font-weight: 300;
+  color: $color-black;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  &.mobile {
+    display: flex;
+
+    margin: 10px 0;
+
+    width: 150px;
+
+    justify-content: center;
+  }
+
+  &.desktop {
+    display: none;
+
+    margin-right: 45px;
+
+    @media (min-width: $min-tablet) {
+      display: block;
+    }
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 2px;
+    background-color: $color-yellow;
+
+    opacity: .7;
+
+    transform: translate(3px, 3px);
+    transition: transform 0.15s ease-out 0s;
+
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px $color-white solid;
+    border-radius: 2px;
+
+    transform: translate(-3px, -3px);
+    transition: transform 0.15s ease-out 0s;
+
+    z-index: -1;
+  }
+
+  &:hover {
+    &::before {
+      transform: translate(-3px, -3px);
+    }
+
+    &::after {
+      transform: translate(3px, 3px);
+    }
+  }
+}
+
