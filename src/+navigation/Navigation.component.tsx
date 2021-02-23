@@ -18,10 +18,14 @@ export const Navigation: FC<INavigation> = ({ refNav }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
   const refNavMobile = useRef<HTMLDivElement>(null);
   const refHamburger = useRef<HTMLDivElement>(null);
+  let isAnimating = false;
+
   let tl = gsap.timeline();
 
   const openNavAndSetState = () => {
-    if (refNavMobile.current && refHamburger.current) {
+    if (refNavMobile.current && refHamburger.current && !isAnimating) {
+      isAnimating = true;
+
       const bars = refHamburger.current.children;
 
       tl.kill();
@@ -30,7 +34,7 @@ export const Navigation: FC<INavigation> = ({ refNav }) => {
       tl
         .to(refNavMobile.current, {
           autoAlpha: 1,
-          duration: .3,
+          duration: .2,
           ease: 'power2.out',
         })
         .to(bars[0], {
@@ -58,7 +62,9 @@ export const Navigation: FC<INavigation> = ({ refNav }) => {
   };
 
   const closeNavAndSetState = () => {
-    if (refNavMobile.current && refHamburger.current) {
+    if (refNavMobile.current && refHamburger.current && !isAnimating) {
+      isAnimating = true;
+
       const bars = refHamburger.current.children;
 
       tl.kill();
@@ -70,17 +76,17 @@ export const Navigation: FC<INavigation> = ({ refNav }) => {
           duration: .3,
           ease: 'power2.out',
         })
+        .to(refNavMobile.current, {
+          autoAlpha: 0,
+          duration: .2,
+          ease: 'power2.out',
+        }, '<')
         .to(bars, {
           yPercent: 0,
           duration: .3,
           ease: 'power2.out',
-        })
-        .to(refNavMobile.current, {
-          autoAlpha: 0,
-          duration: .3,
-          ease: 'power2.out',
           onComplete: () => setIsMobileNavOpen(false),
-        }, '<');
+        });
     }
   };
 
