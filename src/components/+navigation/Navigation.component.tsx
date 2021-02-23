@@ -1,10 +1,12 @@
-import React, { FC, ReactNode, RefObject, useEffect, useRef, useState } from 'react';
+import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 
 import gsap from 'gsap';
 
-import { NavigationContent } from '../types';
+import { NavigationContent } from 'types';
+import { showOrHideNavigationDependingOnScrollDirection } from 'shared/helpers/navigation.helper';
+import { useScrollDirection } from 'shared/hooks/use-scroll-direction';
 
-import { NavItem } from 'shared/nav-item/Navitem.component';
+import { NavItem } from 'shared/components/nav-item/Navitem.component';
 import { NavMobile } from './mobile-nav/NavMobile.component';
 
 import AgatBHP from 'assets/svg/AgatBHP-logo-cut.svg';
@@ -14,20 +16,20 @@ import s from './Navigation.module.scss';
 interface INavigation {
   refNav: RefObject<HTMLDivElement>;
   navigationContent: NavigationContent;
-  children?: ReactNode
 }
 
 export const Navigation: FC<INavigation> = ({ refNav, navigationContent }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
   const refNavMobile = useRef<HTMLDivElement>(null);
   const refHamburger = useRef<HTMLDivElement>(null);
-  let isAnimating = false;
+  const isAnimating = useRef<boolean>(false);
+  const scrollDirection = useScrollDirection();
 
   let tl = gsap.timeline();
 
   const openNavAndSetState = () => {
-    if (refNavMobile.current && refHamburger.current && !isAnimating) {
-      isAnimating = true;
+    if (refNavMobile.current && refHamburger.current && !isAnimating.current) {
+      isAnimating.current = true;
 
       const bars = refHamburger.current.children;
 
@@ -59,14 +61,17 @@ export const Navigation: FC<INavigation> = ({ refNav, navigationContent }) => {
           rotation: 45,
           duration: .3,
           ease: 'power2.out',
-          onComplete: () => setIsMobileNavOpen(true),
+          onComplete: () => {
+            isAnimating.current = false;
+            setIsMobileNavOpen(true);
+          },
         }, '<');
     }
   };
 
   const closeNavAndSetState = () => {
-    if (refNavMobile.current && refHamburger.current && !isAnimating) {
-      isAnimating = true;
+    if (refNavMobile.current && refHamburger.current && !isAnimating.current) {
+      isAnimating.current = true;
 
       const bars = refHamburger.current.children;
 
@@ -88,10 +93,22 @@ export const Navigation: FC<INavigation> = ({ refNav, navigationContent }) => {
           yPercent: 0,
           duration: .3,
           ease: 'power2.out',
-          onComplete: () => setIsMobileNavOpen(false),
+          onComplete: () => {
+            isAnimating.current = false;
+            setIsMobileNavOpen(false);
+          },
         });
     }
   };
+
+  useEffect(() => {
+    if (typeof window !== `undefined` && !isAnimating.current && !isMobileNavOpen) {
+      showOrHideNavigationDependingOnScrollDirection(refNav, scrollDirection);
+      return () => {
+        gsap.killTweensOf(refNav.current);
+      };
+    }
+  }, [scrollDirection, refNav.current]);
 
   useEffect(() => {
     if (refNavMobile.current) {

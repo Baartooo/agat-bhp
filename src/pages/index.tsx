@@ -2,7 +2,8 @@ import React, { FC } from 'react';
 import { FixedObject } from 'gatsby-image';
 import { graphql } from 'gatsby';
 
-import { Start } from '../+start/Start.component';
+import { Start } from '../components/+start/Start.component';
+import { About } from '../components/+about/About.component';
 
 interface IHome {
   data: {
@@ -41,6 +42,7 @@ const Home: FC<IHome> = (props) => {
         background={backgroundStart.childImageSharp.fixed}
         navigationContent={content.navigation}
       />
+      <About />
     </>
   );
 };
