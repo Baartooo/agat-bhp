@@ -3,11 +3,16 @@ import { FixedObject } from 'gatsby-image';
 import { graphql } from 'gatsby';
 
 import { Start } from 'components/+start/Start.component';
-import { About } from 'components/+about/About.component';
+import { Collaboration } from '../components/collaboration/Collaboration.component';
 
 interface IHome {
   data: {
     backgroundStart: {
+      childImageSharp: {
+        fixed: FixedObject
+      }
+    }
+    backgroundCollab: {
       childImageSharp: {
         fixed: FixedObject
       }
@@ -19,6 +24,7 @@ const Home: FC<IHome> = (props) => {
   const {
     data: {
       backgroundStart,
+      backgroundCollab,
     },
   } = props;
 
@@ -26,6 +32,7 @@ const Home: FC<IHome> = (props) => {
     start: {
       firstLine: 'kompleksowa obsługa bhp i ppoż',
       secondLine: 'bezpieczeństwo jest w twoich rękach!',
+      background: backgroundStart.childImageSharp.fixed,
     },
     navigation: {
       start: 'start',
@@ -33,16 +40,19 @@ const Home: FC<IHome> = (props) => {
       offer: 'oferta',
       contact: 'kontakt',
     },
+    collab: {
+      background: backgroundCollab.childImageSharp.fixed,
+    },
   };
 
   return (
     <>
       <Start
         content={content.start}
-        background={backgroundStart.childImageSharp.fixed}
+        background={content.start.background}
         navigationContent={content.navigation}
       />
-      <About />
+      <Collaboration background={content.collab.background} />
     </>
   );
 };
@@ -52,6 +62,19 @@ export default Home;
 export const query = graphql`
 query {
   backgroundStart: file(name: {eq: "background-start"}) {
+    childImageSharp {
+      fixed(width: 1920) {
+        aspectRatio
+        srcWebp
+        srcSetWebp
+        src
+        srcSet
+        height
+        width
+      }
+    }
+  }
+  backgroundCollab: file(name: {eq: "siersza"}) {
     childImageSharp {
       fixed(width: 1920) {
         aspectRatio

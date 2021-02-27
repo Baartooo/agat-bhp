@@ -1,0 +1,25 @@
+@import "src/styles/config";
+
+.collaboration {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.collaboration__background {
+  position: relative;
+
+  height: 100vh;
+}
+
+.collaboration__background-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.collaboration__background-overlay {
+  @include fit;
+
+  background-color: $color-start-overlay;
+}
