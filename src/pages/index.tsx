@@ -42,6 +42,7 @@ const Home: FC<IHome> = (props) => {
     },
     collab: {
       background: backgroundCollab.childImageSharp.fixed,
+      title: 'zaufali nam między innymi',
     },
   };
 
@@ -52,7 +53,10 @@ const Home: FC<IHome> = (props) => {
         background={content.start.background}
         navigationContent={content.navigation}
       />
-      <Collaboration background={content.collab.background} />
+      <Collaboration
+        background={content.collab.background}
+        title={content.collab.title}
+      />
     </>
   );
 };
