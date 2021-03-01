@@ -47,7 +47,7 @@ export const Collaboration: FC<ICollaboration> = ({ background, title, logos }) 
   }, []);
 
   return (
-    <div className={s.collaboration} ref={refCollab}>
+    <div className={s.collaboration} ref={refCollab} id={'collaboration'}>
       <SectionHeader content={title} />
       <div className={s.collaboration__background}>
         <GatsbyImage

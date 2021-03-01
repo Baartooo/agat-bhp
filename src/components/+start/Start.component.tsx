@@ -75,7 +75,7 @@ export const Start: FC<IStart> = ({ background, content, navigationContent }) =>
   return (
     <>
       <Navigation refNav={refNav} navigationContent={navigationContent} />
-      <div className={s.start}>
+      <div className={s.start} id={'start'}>
         <div className={s.start__background}>
           <GatsbyImage
             fixed={background}
