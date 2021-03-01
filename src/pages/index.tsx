@@ -3,7 +3,7 @@ import { FixedObject, FluidObject } from 'gatsby-image';
 import { graphql } from 'gatsby';
 
 import { Start } from 'components/+start/Start.component';
-import { Collaboration } from '../components/collaboration/Collaboration.component';
+import { Collaboration } from 'components/collaboration/Collaboration.component';
 
 interface IHome {
   data: {
@@ -67,9 +67,18 @@ const Home: FC<IHome> = (props) => {
       background: backgroundCollab.childImageSharp.fixed,
       title: 'zaufali nam między innymi',
       logos: [
-        investSteel,
-        termoRex,
-        higher,
+        {
+          ...investSteel,
+          alt: 'Logo InvestSteel',
+        },
+        {
+          ...termoRex,
+          alt: 'Logo TermoRex',
+        },
+        {
+          ...higher,
+          alt: 'Logo Higher',
+        },
       ],
     },
   };
