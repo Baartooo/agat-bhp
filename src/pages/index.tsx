@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { FixedObject } from 'gatsby-image';
+import { FixedObject, FluidObject } from 'gatsby-image';
 import { graphql } from 'gatsby';
 
 import { Start } from 'components/+start/Start.component';
@@ -8,13 +8,33 @@ import { Collaboration } from '../components/collaboration/Collaboration.compone
 interface IHome {
   data: {
     backgroundStart: {
+      name: string;
       childImageSharp: {
         fixed: FixedObject
       }
     }
     backgroundCollab: {
+      name: string;
       childImageSharp: {
         fixed: FixedObject
+      }
+    }
+    higher: {
+      name: string;
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
+    termoRex: {
+      name: string;
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
+    investSteel: {
+      name: string;
+      childImageSharp: {
+        fluid: FluidObject
       }
     }
   }
@@ -25,6 +45,9 @@ const Home: FC<IHome> = (props) => {
     data: {
       backgroundStart,
       backgroundCollab,
+      higher,
+      termoRex,
+      investSteel,
     },
   } = props;
 
@@ -43,6 +66,11 @@ const Home: FC<IHome> = (props) => {
     collab: {
       background: backgroundCollab.childImageSharp.fixed,
       title: 'zaufali nam między innymi',
+      logos: [
+        investSteel,
+        termoRex,
+        higher,
+      ],
     },
   };
 
@@ -56,6 +84,7 @@ const Home: FC<IHome> = (props) => {
       <Collaboration
         background={content.collab.background}
         title={content.collab.title}
+        logos={content.collab.logos}
       />
     </>
   );
@@ -64,8 +93,9 @@ const Home: FC<IHome> = (props) => {
 export default Home;
 
 export const query = graphql`
-query {
+query GetPhotos {
   backgroundStart: file(name: {eq: "background-start"}) {
+    name
     childImageSharp {
       fixed(width: 1920) {
         aspectRatio
@@ -79,6 +109,7 @@ query {
     }
   }
   backgroundCollab: file(name: {eq: "siersza"}) {
+    name
     childImageSharp {
       fixed(width: 1920) {
         aspectRatio
@@ -88,6 +119,42 @@ query {
         srcSet
         height
         width
+      }
+    }
+  }
+  higher: file(name: {eq: "higher"}) {
+    name
+    childImageSharp {
+      fluid(quality: 100) {
+        src
+        srcSet
+        base64
+        aspectRatio
+        sizes
+      }
+    }
+  }
+  termoRex: file(name: {eq: "termo-rex"}) {
+    name
+    childImageSharp {
+      fluid(quality: 100) {
+        src
+        srcSet
+        base64
+        aspectRatio
+        sizes
+      }
+    }
+  }
+  investSteel: file(name: {eq: "invest-steel"}) {
+    name
+    childImageSharp {
+      fluid(quality: 100) {
+        src
+        srcSet
+        base64
+        aspectRatio
+        sizes
       }
     }
   }
