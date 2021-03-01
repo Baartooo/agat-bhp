@@ -1,6 +1,6 @@
 import React, { FC, RefObject, useEffect, useRef, useState } from 'react';
 
-import gsap from 'gsap';
+import { gsap, ScrollToPlugin } from 'gsap/all';
 
 import { NavigationContent } from 'types';
 import { showOrHideNavigationDependingOnScrollDirection } from 'shared/helpers/navigation.helper';
@@ -101,6 +101,28 @@ export const Navigation: FC<INavigation> = ({ refNav, navigationContent }) => {
     }
   };
 
+  const closeNavAndGoTo = (id: string) => {
+    closeNavAndSetState();
+    goTo(id);
+  };
+
+  const goTo = (id: string) => {
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      const anchor = document.getElementById(id);
+      const posTop = anchor ? anchor.offsetTop : 0;
+      gsap.registerPlugin(ScrollToPlugin);
+
+      gsap.to(window, {
+        scrollTo: {
+          y: posTop,
+        },
+        ease: 'power3.out',
+        delay: .2,
+        duration: .8,
+      });
+    }
+  };
+
   useEffect(() => {
     if (typeof window !== `undefined` && !isAnimating.current && !isMobileNavOpen) {
       showOrHideNavigationDependingOnScrollDirection(refNav, scrollDirection);
@@ -120,16 +142,16 @@ export const Navigation: FC<INavigation> = ({ refNav, navigationContent }) => {
 
   return (
     <>
-      <NavMobile refWrapper={refNavMobile} navigationContent={navigationContent} />
+      <NavMobile refWrapper={refNavMobile} navigationContent={navigationContent} closeNavAndGoTo={closeNavAndGoTo} />
       <nav className={s.navigation} ref={refNav}>
         <div className={s.navigation__logo}>
           <AgatBHP className={s.navigation__logoSvg} />
         </div>
 
-        <NavItem text={navigationContent.start} onClick={() => null} isDesktop />
-        <NavItem text={navigationContent.about} onClick={() => null} isDesktop />
-        <NavItem text={navigationContent.offer} onClick={() => null} isDesktop />
-        <NavItem text={navigationContent.contact} onClick={() => null} isDesktop />
+        <NavItem text={navigationContent.start} onClick={() => closeNavAndGoTo('start')} isDesktop />
+        <NavItem text={navigationContent.about} onClick={() => closeNavAndGoTo('about')} isDesktop />
+        <NavItem text={navigationContent.offer} onClick={() => closeNavAndGoTo('offer')} isDesktop />
+        <NavItem text={navigationContent.contact} onClick={() => closeNavAndGoTo('contact')} isDesktop />
 
         <div
           className={s.navigation__hamburger}
