@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Agat BHP',
+    header: 'Agat BHP',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

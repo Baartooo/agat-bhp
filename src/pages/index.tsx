@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 
 import { Start } from 'components/+start/Start.component';
 import { Collaboration } from 'components/collaboration/Collaboration.component';
+import { About } from '../components/+about/About.component';
 
 interface IHome {
   data: {
@@ -14,6 +15,12 @@ interface IHome {
       }
     }
     backgroundCollab: {
+      name: string;
+      childImageSharp: {
+        fixed: FixedObject
+      }
+    }
+    backgroundAbout: {
       name: string;
       childImageSharp: {
         fixed: FixedObject
@@ -45,6 +52,7 @@ const Home: FC<IHome> = (props) => {
     data: {
       backgroundStart,
       backgroundCollab,
+      backgroundAbout,
       higher,
       termoRex,
       investSteel,
@@ -63,9 +71,13 @@ const Home: FC<IHome> = (props) => {
       offer: 'oferta',
       contact: 'kontakt',
     },
+    about: {
+      background: backgroundAbout.childImageSharp.fixed,
+      header: 'o nas',
+    },
     collab: {
       background: backgroundCollab.childImageSharp.fixed,
-      title: 'zaufali nam między innymi',
+      header: 'zaufali nam między innymi',
       logos: [
         {
           ...investSteel,
@@ -90,9 +102,13 @@ const Home: FC<IHome> = (props) => {
         background={content.start.background}
         navigationContent={content.navigation}
       />
+      <About
+        background={content.about.background}
+        header={content.about.header}
+      />
       <Collaboration
         background={content.collab.background}
-        title={content.collab.title}
+        header={content.collab.header}
         logos={content.collab.logos}
       />
     </>
@@ -121,6 +137,20 @@ query GetPhotos {
     name
     childImageSharp {
       fixed(width: 1920) {
+        aspectRatio
+        srcWebp
+        srcSetWebp
+        src
+        srcSet
+        height
+        width
+      }
+    }
+  }
+  backgroundAbout: file(name: {eq: "background-about"}) {
+    name
+    childImageSharp {
+      fixed(width: 1920, quality: 100) {
         aspectRatio
         srcWebp
         srcSetWebp

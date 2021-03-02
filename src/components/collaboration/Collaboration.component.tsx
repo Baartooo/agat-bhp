@@ -12,10 +12,10 @@ import s from './Collaboration.module.scss';
 interface ICollaboration {
   background: FixedObject;
   logos: LogoData[]
-  title: string;
+  header: string;
 }
 
-export const Collaboration: FC<ICollaboration> = ({ background, title, logos }) => {
+export const Collaboration: FC<ICollaboration> = ({ background, header, logos }) => {
   const refLogosWrapper = useRef<HTMLDivElement>(null);
   const refCollab = useRef<HTMLDivElement>(null);
 
@@ -48,7 +48,7 @@ export const Collaboration: FC<ICollaboration> = ({ background, title, logos }) 
 
   return (
     <div className={s.collaboration} ref={refCollab} id={'collaboration'}>
-      <SectionHeader content={title} />
+      <SectionHeader content={header} />
       <div className={s.collaboration__background}>
         <GatsbyImage
           fixed={background}

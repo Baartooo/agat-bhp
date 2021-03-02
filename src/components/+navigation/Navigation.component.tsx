@@ -5,6 +5,7 @@ import { gsap, ScrollToPlugin } from 'gsap/all';
 import { NavigationContent } from 'types';
 import { showOrHideNavigationDependingOnScrollDirection } from 'shared/helpers/navigation.helper';
 import { useScrollDirection } from 'shared/hooks/use-scroll-direction';
+import { hideNavigation } from './Navigation.animations';
 
 import { NavItem } from 'shared/components/nav-item/Navitem.component';
 import { NavMobile } from './mobile-nav/NavMobile.component';
@@ -103,6 +104,7 @@ export const Navigation: FC<INavigation> = ({ refNav, navigationContent }) => {
 
   const closeNavAndGoTo = (id: string) => {
     closeNavAndSetState();
+    hideNavigation(refNav);
     goTo(id);
   };
 

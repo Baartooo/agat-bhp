@@ -1,6 +1,25 @@
-@import "../../styles/config";
+@import "src/styles/config";
 
 .about {
+  position: relative;
+  
   width: 100%;
   min-height: 100vh;
+}
+
+.about__background {
+  position: relative;
+
+  height: 100vh;
+}
+
+.about__background-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.about__background-overlay {
+  @include fit;
+
+  background-color: $color-about-overlay;
 }
