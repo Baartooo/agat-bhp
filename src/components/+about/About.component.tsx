@@ -19,7 +19,7 @@ export const About: FC<IAbout> = ({ background, header }) => {
           fixed={background}
           className={s.about__backgroundImage}
           imgStyle={{
-            objectPosition: '45% 50%',
+            objectPosition: '40% 50%',
           }}
         />
         <div className={s.about__backgroundOverlay} />
@@ -31,13 +31,11 @@ export const About: FC<IAbout> = ({ background, header }) => {
           <p className={s.about__paragraph}>
             Zajmujemy się <span className={s.about__bold}>obsługą firm pod względem BHP, prowadzeniem szkoleń BHP i ochroną przeciwpożarową.</span> Dysponujemy
             profesjonalną, wykształconą kadrą, posiadającą <span className={s.about__bold}>odpowiednie kwalifikacje i uprawnienia</span>,
-            co gwarantuje
-            <span className={s.about__bold}>sumienne i profesjonalne wykonanie usługi</span>. Zajmujemy się również
+            co gwarantuje <span className={s.about__bold}>sumienne i profesjonalne wykonanie usługi</span>. Zajmujemy się również
             obsługą branży budowlanej.
           </p>
           <p className={s.about__paragraph}>
-            Jesteśmy zaangażowani w działania na rzecz
-            <span className={s.about__bold}>poprawy bezpieczeństwa pracy</span>.
+            Jesteśmy zaangażowani w działania na rzecz <span className={s.about__bold}>poprawy bezpieczeństwa pracy</span>.
           </p>
           <p className={s.about__paragraph}>
             Naszym celem jest <span className={s.about__bold}>promowanie najlepszych praktyk w zakresie bezpieczeństwa i ochrony pracy</span>,
