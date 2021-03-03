@@ -21,7 +21,7 @@ export const About: FC<IAbout> = ({ background, header }) => {
           fixed={background}
           className={s.about__backgroundImage}
           imgStyle={{
-            objectPosition: '20% 50%',
+            objectPosition: '55% 50%',
           }}
         />
         <div className={s.about__backgroundOverlay} />
