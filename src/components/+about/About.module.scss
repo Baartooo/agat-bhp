@@ -6,7 +6,7 @@
   display: flex;
 
   width: 100%;
-  height: 110vh;
+  min-height: 110vh;
 
   flex-direction: column;
 }
@@ -32,14 +32,18 @@
   height: 100%;
 
   background-color: $color-about-overlay;
+
+  z-index: 0;
 }
 
 .about__content {
-  @include fit;
   @include container;
   @include grid-col(15);
+  position: relative;
 
   display: flex;
+
+  padding-bottom: 20px;
 
   width: 100%;
   height: 100%;
@@ -53,7 +57,7 @@
 
 }
 
-.about__explanation {
+.about__section {
   display: flex;
 
   margin-top: 120px;
@@ -65,6 +69,8 @@
 
   text-shadow: $text-shadow-black;
 
+  letter-spacing: .05em;
+
   @media (min-width: $min-mobile) {
     width: 80%;
   }
@@ -72,7 +78,7 @@
   @media (min-width: $min-tablet) {
     margin-left: 50px;
 
-    width: 500px;
+    width: 550px;
   }
 }
 
@@ -90,11 +96,44 @@
   margin-bottom: 15px;
 
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.5;
   text-align: justify;
-
 }
 
 .about__bold {
   font-weight: 900;
+}
+
+.about__prize-segment {
+  display: flex;
+
+  margin-bottom: 40px;
+
+  width: 100%;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about__trophy {
+  width: 70px;
+  height: 70px;
+  
+  &Svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.about__prize-content {
+  @include rf(12, 18);
+
+  display: block;
+
+  margin-left: 20px;
+
+  font-weight: 300;
+  text-align: justify;
+
+  text-shadow: $text-shadow-black;
 }
