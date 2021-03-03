@@ -94,6 +94,7 @@ export const Navigation: FC<INavigation> = ({ refNav, navigationContent }) => {
           yPercent: 0,
           duration: .3,
           ease: 'power2.out',
+          onStart: () => hideNavigation(refNav),
           onComplete: () => {
             isAnimating.current = false;
             setIsMobileNavOpen(false);
@@ -104,7 +105,6 @@ export const Navigation: FC<INavigation> = ({ refNav, navigationContent }) => {
 
   const closeNavAndGoTo = (id: string) => {
     closeNavAndSetState();
-    hideNavigation(refNav);
     goTo(id);
   };
 
