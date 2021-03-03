@@ -61,8 +61,8 @@
 }
 
 .start__title {
-  @include rf(16, 43);
-  margin-bottom: 5px;
+  @include rf(16, 40);
+  margin-bottom: 10px;
 
   font-weight: 700;
 
@@ -70,6 +70,7 @@
 
   text-transform: uppercase;
   white-space: nowrap;
+  line-height: 1;
 
   visibility: hidden;
 }
