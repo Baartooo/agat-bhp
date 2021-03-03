@@ -2,15 +2,22 @@
 
 .about {
   position: relative;
-  
+
+  display: flex;
+
   width: 100%;
-  min-height: 100vh;
+  min-height: 110vh;
+
+  flex-direction: column;
 }
 
 .about__background {
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
 
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 .about__background-image {
@@ -21,5 +28,113 @@
 .about__background-overlay {
   @include fit;
 
+  width: 100%;
+  height: 100%;
+
   background-color: $color-about-overlay;
+
+  z-index: 0;
+}
+
+.about__content {
+  @include container;
+  @include grid-col(15);
+  position: relative;
+
+  display: flex;
+
+  padding-bottom: 20px;
+  padding-top: 20px;
+
+  width: 100%;
+  height: 100%;
+
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $min-tablet) {
+    align-items: flex-start;
+  }
+
+}
+
+.about__section {
+  display: flex;
+
+  margin-top: 100px;
+
+  width: 100%;
+
+  flex-direction: column;
+  align-items: center;
+
+  text-shadow: $text-shadow-black;
+
+  letter-spacing: .05em;
+
+  @media (min-width: $min-mobile) {
+    width: 80%;
+  }
+
+  @media (min-width: $min-tablet) {
+    margin-left: 50px;
+
+    width: 550px;
+  }
+}
+
+.about__title {
+  @include rf(20, 30);
+
+  margin: 0 0 15px;
+
+  font-weight: 900;
+}
+
+.about__paragraph {
+  @include rf(12, 18);
+
+  margin-bottom: 15px;
+
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.about__bold {
+  font-weight: 900;
+}
+
+.about__prize-segment {
+  display: flex;
+
+  margin-bottom: 40px;
+
+  width: 100%;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about__trophy {
+  width: 70px;
+  height: 70px;
+
+  &Svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.about__prize-content {
+  @include rf(12, 18);
+
+  display: block;
+
+  margin-left: 20px;
+
+  font-weight: 300;
+  text-align: justify;
+
+  text-shadow: $text-shadow-black;
 }
