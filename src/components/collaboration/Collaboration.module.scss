@@ -6,52 +6,70 @@
   display: flex;
 
   width: 100%;
-  height: 100vh;
+  height: 10vh;
+
+  padding: 200px 0;
 
   justify-content: center;
   align-items: center;
-}
 
-.collaboration__background {
-  position: relative;
-
-  height: 100vh;
-}
-
-.collaboration__background-image {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-.collaboration__background-overlay {
-  @include fit;
-
-  background-color: $color-collaborate-overlay;
+  background-color: $color-dark-background;
 }
 
 .collaboration__logos {
-  @include fit;
   @include container;
   @include grid-col(15);
+
+  position: relative;
 
   display: flex;
 
   width: 100%;
-  height: 100%;
 
-  flex-direction: column;
+  height: 100px;
+
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 
-  z-index: 300;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 50px;
+    height: 100%;
+
+    background: linear-gradient(-90deg, $color-white-transparent, $color-dark-background);
+
+    z-index: 100;
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 60px;
+    height: 100%;
+
+    background: linear-gradient(90deg, $color-white-transparent, $color-dark-background);
+
+    z-index: 100;
+  }
+
 }
 
 .collaboration__logo {
-  margin: 20px 0;
+  margin: 0 20px;
 
   width: 250px;
-
-  visibility: hidden;
 
   @media (min-width: $min-mobile) {
     width: 350px;
