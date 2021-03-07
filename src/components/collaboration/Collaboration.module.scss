@@ -6,16 +6,16 @@
   display: flex;
 
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   justify-content: center;
   align-items: center;
 }
 
 .collaboration__background {
-  position: relative;
+  @include fit;
 
-  height: 100vh;
+  height: 100%;
 }
 
 .collaboration__background-image {
@@ -30,30 +30,43 @@
 }
 
 .collaboration__logos {
-  @include fit;
   @include container;
   @include grid-col(15);
 
   display: flex;
 
-  width: 100%;
-  height: 100%;
+  padding: 100px 0 50px;
 
-  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 
   z-index: 300;
 }
 
 .collaboration__logo {
+  display: block;
+
   margin: 20px 0;
 
-  width: 250px;
+  width: 60%;
 
   visibility: hidden;
 
-  @media (min-width: $min-mobile) {
-    width: 350px;
+  cursor: pointer;
+  
+
+  @media (min-width: $min-tablet) {
+    margin: 0;
+    
+    width: 40%;
+  }
+
+  @media (min-width: $min-desktop) {
+    width: 34%;
   }
 }
