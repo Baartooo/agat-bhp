@@ -8,6 +8,7 @@ import { LogoData } from 'types';
 import { SectionHeader } from 'shared/section-header/SectionHeader.component';
 
 import s from './Collaboration.module.scss';
+import { findRenderedComponentWithType } from 'react-dom/test-utils';
 
 interface ICollaboration {
   background: FixedObject;
@@ -28,13 +29,10 @@ export const Collaboration: FC<ICollaboration> = ({ background, header, logos })
       gsap.set(allLogos, {
         autoAlpha: 0,
         xPercent: (index) => {
-          // console.log((index + 1) % 2);
-          if ((index + 1) % 2 === 0) {
-            console.log('even');
-            return 20;
-          } else {
-            console.log('odd');
+          if (index % 2 === 0) {
             return -20;
+          } else {
+            return 20;
           }
         },
       });
