@@ -136,6 +136,51 @@ const Home: FC<IHome> = (props) => {
     offer: {
       header: 'oferta',
       title: 'oferujemy szeroką gamę usług w zakresie bhp i ppoż',
+      osh: {
+        title: 'Zakres usług BHP',
+        content: <>
+          // aspekty prawne i stały nadzór w ramach zadań służb BHP;<br /><br />
+          // szkolenia BHP wstępne i okresowe pracowników;<br /><br />
+          // ocena i dokumentacja ryzyka zawodowego na stanowiskach pracy;<br /><br />
+          // sporządzanie dokumentacji powypadkowej;<br /><br />
+          // organizacja pomiarów czynników szkodliwych i uciążliwych;<br /><br />
+          // przygotowanie procedur BHP - audyt ISO 45001;
+        </>,
+      },
+      online: {
+        title: 'Szkolenia BHP online',
+        content: <>
+          // szkolenia BHP online w języku polskim, angielskim i francuskim;<br /><br />
+          // szkolenie można zrealizować w dogodnym momencie;<br /><br />
+          // forma szkolenia nie zaburza harmonogramu pracy danego przedsiębiorstwa;<br /><br />
+          // duża oszczędność czasu pracowników - bez dojazdów;<br /><br />
+          // mniejsze koszty dla pracodawcy niż przypadku szkoleń tradycyjnych;<br /><br />
+          // ciekawe materiały oraz lepsze zapamiętywanie przekazywanych treści;<br /><br />
+        </>,
+      },
+      firefighting: {
+        title: 'Zakres usług PPOŻ',
+        content: <>
+          // aspekty prawne ppoż.;<br />
+          // szkolenia z ochrony przeciwpożarowej i użycia podręcznego sprzętu gaśniczego;<br /><br />
+          // przeprowadzanie audytów i kontroli stanu ochrony przeciwpożarowej;<br /><br />
+          // nadzór nad podręcznym sprzętem gaśniczym;<br /><br />
+          // wykonanie instrukcji bezpieczeństwa pożarowego zgodnie z wymogami prawa;<br /><br />
+          // opracowanie scenariuszy rozwoju pożarów oraz planów ewakuacyjnych;<br /><br />
+        </>,
+      },
+      firstAid: {
+        title: 'Zakres usług Pierwszej pomocy',
+        content: <>
+          // aspekty prawne pierwszej pomocy;<br /><br />
+          // ocena sytuacji i zabezpieczenie miejsca zdarzenia;<br /><br />
+          // ocena stanu poszkodowanego i kontrola czynności życiowych;<br /><br />
+          // postępowanie z poszkodowanym nieprzytomnym;<br /><br />
+          // resuscytacja krążeniowo-oddechowa;<br /><br />
+          // omdlenia, atak serca, padaczka;<br /><br />
+        </>,
+      },
+
     },
   };
 
@@ -158,6 +203,10 @@ const Home: FC<IHome> = (props) => {
       <Offer
         header={content.offer.header}
         title={content.offer.title}
+        osh={content.offer.osh}
+        online={content.offer.online}
+        firefighting={content.offer.firefighting}
+        firstAid={content.offer.firstAid}
       />
     </>
   );
