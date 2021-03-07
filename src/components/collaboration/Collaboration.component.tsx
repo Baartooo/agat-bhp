@@ -60,7 +60,7 @@ export const Collaboration: FC<ICollaboration> = ({ background, header, logos })
           fixed={background}
           className={s.collaboration__backgroundImage}
           imgStyle={{
-            objectPosition: '45% 50%',
+            objectPosition: '48% 50%',
           }}
         />
         <div className={s.collaboration__backgroundOverlay} />
