@@ -42,11 +42,13 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
         <div className={s.offer__content}>
           <div className={s.offer__row}>
             <div className={s.offer__segment}>
+              <div className={s.offer__number}>01.</div>
               <p className={s.offer__text}>
                 {osh.content}
               </p>
             </div>
             <div className={s.offer__segment}>
+              <div className={s.offer__number}>02.</div>
               <p className={s.offer__text}>
                 {online.content}
               </p>
@@ -54,11 +56,13 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
           </div>
           <div className={s.offer__row}>
             <div className={s.offer__segment}>
+              <div className={s.offer__number}>03.</div>
               <p className={s.offer__text}>
                 {firefighting.content}
               </p>
             </div>
             <div className={s.offer__segment}>
+              <div className={s.offer__number}>04.</div>
               <p className={s.offer__text}>
                 {firstAid.content}
               </p>

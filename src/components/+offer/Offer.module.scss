@@ -65,23 +65,45 @@
 
   width: 100%;
 
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items-content: center;
+
+  @media (min-width: $min-desktop) {
+    flex-direction: row;
+  }
 }
 
 .offer__segment {
+  position: relative;
   display: flex;
-  
+
   padding: 100px;
-  
-  width: 50%;
+
+  width: 100%;
 
   justify-content: center;
   align-items: center;
 
   border: solid $color-white 1px;
+
+  @media (min-width: $min-desktop) {
+    width: 50%;
+  }
 }
 
 .offer__text {
+  @include rf(14, 16);
+
+  font-weight: 200;
   line-height: 1.5;
+}
+
+.offer__number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 200;
 }
