@@ -1,0 +1,51 @@
+@import "src/styles/config";
+
+.offer {
+  position: relative;
+
+  display: flex;
+
+  padding-top: 150px;
+
+  min-height: 100vh;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.offer__wrapper {
+  @include container;
+
+  position: relative;
+
+  display: flex;
+
+  height: 100%;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.offer__title {
+  @include rf(20, 30);
+
+  position: relative;
+
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+}
+
+.offer__underline {
+  position: absolute;
+  top: 110%;
+  left: 0;
+
+  width: 100%;
+  height: auto;
+
+  &Svg {
+    width: 100%;
+    height: auto;
+  }
+}

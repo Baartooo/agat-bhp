@@ -2,9 +2,10 @@ import React, { FC } from 'react';
 import { FixedObject, FluidObject } from 'gatsby-image';
 import { graphql } from 'gatsby';
 
-import { Start } from 'components/+start/Start.component';
+import { Start } from 'components/start/Start.component';
 import { Collaboration } from 'components/collaboration/Collaboration.component';
 import { About } from '../components/+about/About.component';
+import { Offer } from '../components/+offer/Offer.component';
 
 interface IHome {
   data: {
@@ -132,6 +133,10 @@ const Home: FC<IHome> = (props) => {
         },
       ],
     },
+    offer: {
+      header: 'oferta',
+      title: 'oferujemy szeroką gamę usług w zakresie bhp i ppoż',
+    },
   };
 
   return (
@@ -149,6 +154,10 @@ const Home: FC<IHome> = (props) => {
         background={content.collab.background}
         header={content.collab.header}
         logos={content.collab.logos}
+      />
+      <Offer
+        header={content.offer.header}
+        title={content.offer.title}
       />
     </>
   );
