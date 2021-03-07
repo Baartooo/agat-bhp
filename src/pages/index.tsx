@@ -44,6 +44,24 @@ interface IHome {
         fluid: FluidObject
       }
     }
+    imprezoweZakupy: {
+      name: string;
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
+    odziezDlaMedyka: {
+      name: string;
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
+    weddingStore: {
+      name: string;
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
   }
 }
 
@@ -56,6 +74,9 @@ const Home: FC<IHome> = (props) => {
       higher,
       termoRex,
       investSteel,
+      weddingStore,
+      odziezDlaMedyka,
+      imprezoweZakupy,
     },
   } = props;
 
@@ -80,6 +101,10 @@ const Home: FC<IHome> = (props) => {
       header: 'zaufali nam między innymi',
       logos: [
         {
+          ...higher,
+          alt: 'Logo Higher',
+        },
+        {
           ...investSteel,
           alt: 'Logo InvestSteel',
         },
@@ -88,8 +113,16 @@ const Home: FC<IHome> = (props) => {
           alt: 'Logo TermoRex',
         },
         {
-          ...higher,
-          alt: 'Logo Higher',
+          ...weddingStore,
+          alt: 'Logo Wedding Store',
+        },
+        {
+          ...imprezoweZakupy,
+          alt: 'Logo Imprezowe Zakupy',
+        },
+        {
+          ...odziezDlaMedyka,
+          alt: 'Logo Odzież Dla Medyka',
         },
       ],
     },
@@ -133,7 +166,7 @@ query GetPhotos {
       }
     }
   }
-  backgroundCollab: file(name: {eq: "siersza"}) {
+  backgroundCollab: file(name: {eq: "team"}) {
     name
     childImageSharp {
       fixed(width: 1920) {
@@ -186,6 +219,42 @@ query GetPhotos {
     }
   }
   investSteel: file(name: {eq: "invest-steel"}) {
+    name
+    childImageSharp {
+      fluid(quality: 100) {
+        src
+        srcSet
+        base64
+        aspectRatio
+        sizes
+      }
+    }
+  }
+  imprezoweZakupy: file(name: {eq: "imprezowe-zakupy"}) {
+    name
+    childImageSharp {
+      fluid(quality: 100) {
+        src
+        srcSet
+        base64
+        aspectRatio
+        sizes
+      }
+    }
+  }
+  odziezDlaMedyka: file(name: {eq: "odziez-dla-medyka"}) {
+    name
+    childImageSharp {
+      fluid(quality: 100) {
+        src
+        srcSet
+        base64
+        aspectRatio
+        sizes
+      }
+    }
+  }
+  weddingStore: file(name: {eq: "wedding-store"}) {
     name
     childImageSharp {
       fluid(quality: 100) {

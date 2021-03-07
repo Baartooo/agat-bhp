@@ -6,72 +6,64 @@
   display: flex;
 
   width: 100%;
-  height: 10vh;
-
-  padding: 200px 0;
+  min-height: 100vh;
 
   justify-content: center;
   align-items: center;
+}
 
-  background-color: $color-dark-background;
+.collaboration__background {
+  @include fit;
+
+  height: 100%;
+}
+
+.collaboration__background-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.collaboration__background-overlay {
+  @include fit;
+
+  background-color: $color-collaborate-overlay;
 }
 
 .collaboration__logos {
   @include container;
   @include grid-col(15);
 
-  position: relative;
-
   display: flex;
 
-  width: 100%;
+  padding: 100px 0 50px;
 
-  height: 100px;
+  width: 100%;
+  min-height: 100%;
 
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 
-  overflow: hidden;
-
-  &::before {
-    content: '';
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 50px;
-    height: 100%;
-
-    background: linear-gradient(-90deg, $color-white-transparent, $color-dark-background);
-
-    z-index: 100;
-  }
-
-  &::after {
-    content: '';
-
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    width: 60px;
-    height: 100%;
-
-    background: linear-gradient(90deg, $color-white-transparent, $color-dark-background);
-
-    z-index: 100;
-  }
-
+  z-index: 300;
 }
 
 .collaboration__logo {
-  margin: 0 20px;
+  margin: 20px 0;
 
-  width: 250px;
+  width: 60%;
+
+  visibility: hidden;
 
   @media (min-width: $min-mobile) {
-    width: 350px;
+    width: 40%;
+  }
+
+  @media (min-width: $min-tablet) {
+    width: 35%;
+  }
+
+  @media (min-width: $min-desktop) {
+    width: 34%;
   }
 }

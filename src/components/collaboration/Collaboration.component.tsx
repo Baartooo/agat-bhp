@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef } from 'react';
 import GatsbyImage, { FixedObject } from 'gatsby-image';
 
-import { gsap } from 'gsap/all';
+import { gsap, ScrollTrigger } from 'gsap/all';
 
 import { LogoData } from 'types';
 
@@ -18,21 +18,55 @@ interface ICollaboration {
 export const Collaboration: FC<ICollaboration> = ({ background, header, logos }) => {
   const refLogosWrapper = useRef<HTMLDivElement>(null);
   const refCollab = useRef<HTMLDivElement>(null);
-  
+
+  useEffect(() => {
+    if (refLogosWrapper.current && refCollab.current) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const allLogos = refLogosWrapper.current.children;
+
+      gsap.set(allLogos, {
+        autoAlpha: 0,
+        xPercent: (index) => {
+          // console.log((index + 1) % 2);
+          if ((index + 1) % 2 === 0) {
+            console.log('even');
+            return 20;
+          } else {
+            console.log('odd');
+            return -20;
+          }
+        },
+      });
+
+      gsap.to(allLogos, {
+        autoAlpha: 1,
+        xPercent: 0,
+        scrollTrigger: {
+          trigger: refCollab.current,
+          start: '40% 100%',
+          once: true,
+        },
+        stagger: .5,
+
+      });
+
+    }
+  }, []);
 
   return (
     <div className={s.collaboration} ref={refCollab} id={'collaboration'}>
       <SectionHeader content={header} />
-      {/*<div className={s.collaboration__background}>*/}
-      {/*  <GatsbyImage*/}
-      {/*    fixed={background}*/}
-      {/*    className={s.collaboration__backgroundImage}*/}
-      {/*    imgStyle={{*/}
-      {/*      objectPosition: '35% 50%',*/}
-      {/*    }}*/}
-      {/*  />*/}
-      {/*  <div className={s.collaboration__backgroundOverlay} />*/}
-      {/*</div>*/}
+      <div className={s.collaboration__background}>
+        <GatsbyImage
+          fixed={background}
+          className={s.collaboration__backgroundImage}
+          imgStyle={{
+            objectPosition: '35% 50%',
+          }}
+        />
+        <div className={s.collaboration__backgroundOverlay} />
+      </div>
 
       <div className={s.collaboration__logos} ref={refLogosWrapper}>
         {
