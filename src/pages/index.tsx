@@ -102,26 +102,32 @@ const Home: FC<IHome> = (props) => {
       logos: [
         {
           ...higher,
+          url: '#',
           alt: 'Logo Higher',
         },
         {
           ...investSteel,
+          url: '#',
           alt: 'Logo InvestSteel',
         },
         {
           ...termoRex,
+          url: '#',
           alt: 'Logo TermoRex',
         },
         {
           ...weddingStore,
+          url: '#',
           alt: 'Logo Wedding Store',
         },
         {
           ...imprezoweZakupy,
+          url: '#',
           alt: 'Logo Imprezowe Zakupy',
         },
         {
           ...odziezDlaMedyka,
+          url: '#',
           alt: 'Logo Odzież Dla Medyka',
         },
       ],

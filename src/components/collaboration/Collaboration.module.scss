@@ -49,18 +49,21 @@
 }
 
 .collaboration__logo {
+  display: block;
+
   margin: 20px 0;
 
   width: 60%;
 
   visibility: hidden;
 
-  @media (min-width: $min-mobile) {
-    width: 40%;
-  }
+  cursor: pointer;
+  
 
   @media (min-width: $min-tablet) {
-    width: 35%;
+    margin: 0;
+    
+    width: 40%;
   }
 
   @media (min-width: $min-desktop) {

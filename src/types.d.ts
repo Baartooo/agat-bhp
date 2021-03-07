@@ -17,5 +17,6 @@ export type LogoData = {
   childImageSharp: {
     fluid: FluidObject
   }
+  url: string;
   alt: string;
 }

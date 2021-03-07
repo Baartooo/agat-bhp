@@ -8,7 +8,6 @@ import { LogoData } from 'types';
 import { SectionHeader } from 'shared/section-header/SectionHeader.component';
 
 import s from './Collaboration.module.scss';
-import { findRenderedComponentWithType } from 'react-dom/test-utils';
 
 interface ICollaboration {
   background: FixedObject;
@@ -40,6 +39,7 @@ export const Collaboration: FC<ICollaboration> = ({ background, header, logos })
       gsap.to(allLogos, {
         autoAlpha: 1,
         xPercent: 0,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: refCollab.current,
           start: '40% 100%',
@@ -50,7 +50,7 @@ export const Collaboration: FC<ICollaboration> = ({ background, header, logos })
       });
 
     }
-  }, []);
+  }, [refLogosWrapper.current, refCollab.current]);
 
   return (
     <div className={s.collaboration} ref={refCollab} id={'collaboration'}>
@@ -60,7 +60,7 @@ export const Collaboration: FC<ICollaboration> = ({ background, header, logos })
           fixed={background}
           className={s.collaboration__backgroundImage}
           imgStyle={{
-            objectPosition: '35% 50%',
+            objectPosition: '45% 50%',
           }}
         />
         <div className={s.collaboration__backgroundOverlay} />
@@ -69,9 +69,9 @@ export const Collaboration: FC<ICollaboration> = ({ background, header, logos })
       <div className={s.collaboration__logos} ref={refLogosWrapper}>
         {
           logos.map((logo) => (
-            <div className={s.collaboration__logo} key={logo.name}>
-              <GatsbyImage fluid={logo.childImageSharp.fluid} className={s.collaboration__logoImg} />
-            </div>
+            <a href={logo.url} className={s.collaboration__logo} key={logo.name}>
+              <GatsbyImage fluid={logo.childImageSharp.fluid} className={s.collaboration__logoImg} alt={logo.alt} />
+            </a>
           ))
         }
       </div>
