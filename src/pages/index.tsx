@@ -102,32 +102,32 @@ const Home: FC<IHome> = (props) => {
       logos: [
         {
           ...higher,
-          url: '#',
+          url: 'http://higher.com.pl',
           alt: 'Logo Higher',
         },
         {
           ...investSteel,
-          url: '#',
+          url: 'http://investsteel.pl/wspolpraca/',
           alt: 'Logo InvestSteel',
         },
         {
           ...termoRex,
-          url: '#',
+          url: 'https://termo-rex.pl/',
           alt: 'Logo TermoRex',
         },
         {
           ...weddingStore,
-          url: '#',
+          url: 'https://weddingstore.pl/',
           alt: 'Logo Wedding Store',
         },
         {
           ...imprezoweZakupy,
-          url: '#',
+          url: 'https://imprezowezakupy.pl/',
           alt: 'Logo Imprezowe Zakupy',
         },
         {
           ...odziezDlaMedyka,
-          url: '#',
+          url: 'https://odziezdlamedyka.pl/',
           alt: 'Logo Odzież Dla Medyka',
         },
       ],
