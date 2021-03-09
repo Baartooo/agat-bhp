@@ -142,14 +142,14 @@
   top: 0;
 
   width: 1px;
-  height: 450%;
+  height: 440%;
 
   background-color: $color-white-line;
 
   transform-origin: 0 0;
 
   @media (min-width: $min-desktop) {
-    height: 225%;
+    height: 220%;
   }
 }
 

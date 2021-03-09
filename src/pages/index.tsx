@@ -6,6 +6,7 @@ import { Start } from 'components/start/Start.component';
 import { Collaboration } from 'components/collaboration/Collaboration.component';
 import { About } from '../components/+about/About.component';
 import { Offer } from '../components/+offer/Offer.component';
+import { Contact } from '../components/+contact/Contact.component';
 
 interface IHome {
   data: {
@@ -207,6 +208,7 @@ const Home: FC<IHome> = (props) => {
         firefighting={content.offer.firefighting}
         firstAid={content.offer.firstAid}
       />
+      <Contact />
     </>
   );
 };

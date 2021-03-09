@@ -59,6 +59,8 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
   let tl = gsap.timeline();
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     if (isMobileResolution) {
 
     } else {
@@ -72,15 +74,36 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
 
         tl = gsap.timeline({
           scrollTrigger: {
-            markers: true,
             trigger: refTrigger.current,
+            start: '0% 90%',
+            end: '50% 0%',
+            once: true,
+            // scrub: 1, // option 2
           },
         });
+
+        tl
+          .to([refLineOneTop.current, refLineOneBottom.current, refLineThreeBottom.current], {
+            scaleX: 1,
+            stagger: .7,
+            ease: 'none',
+            duration: 8, // option 1
+          })
+          .to([refLineOneLeft.current, refLineOneRight.current, refLineTwoRight.current], {
+            scaleY: 1,
+            stagger: .7,
+            ease: 'none',
+            duration: 8, // option 1
+          }, '<+1');
+
+        return () => {
+          tl.kill();
+        };
       }
 
     }
 
-  }, []);
+  }, [isMobileResolution]);
 
   return (
     <div className={s.offer} id={'offer'}>
