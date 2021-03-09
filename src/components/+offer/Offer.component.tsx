@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef, Fragment } from 'react';
 
 import { gsap, ScrollTrigger } from 'gsap/all';
 
@@ -18,19 +18,19 @@ interface IOffer {
   title: string
   osh: {
     title: string,
-    content: JSX.Element
+    points: string[],
   }
   online: {
     title: string,
-    content: JSX.Element
+    points: string[],
   }
   firefighting: {
     title: string,
-    content: JSX.Element
+    points: string[],
   }
   firstAid: {
     title: string,
-    content: JSX.Element
+    points: string[],
   }
 
 }
@@ -162,7 +162,15 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
 
               <div className={s.offer__number}>01.</div>
               <p className={s.offer__text}>
-                {osh.content}
+                {
+                  osh.points.map((point, index) => {
+                    return (
+                      <Fragment key={index}>
+                        <span key={index} className={s.offer__bullet}>//</span>&nbsp;&nbsp;&nbsp;{point}<br /><br />
+                      </Fragment>
+                    );
+                  })
+                }
               </p>
             </div>
             <div className={s.offer__segment}>
@@ -171,7 +179,15 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
 
               <div className={s.offer__number}>02.</div>
               <p className={s.offer__text}>
-                {online.content}
+                {
+                  online.points.map((point, index) => {
+                    return (
+                      <Fragment key={index}>
+                        <span key={index} className={s.offer__bullet}>//</span>&nbsp;&nbsp;&nbsp;{point}<br /><br />
+                      </Fragment>
+                    );
+                  })
+                }
               </p>
             </div>
           </div>
@@ -183,7 +199,15 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
 
               <div className={s.offer__number}>03.</div>
               <p className={s.offer__text}>
-                {firefighting.content}
+                {
+                  firefighting.points.map((point, index) => {
+                    return (
+                      <Fragment key={index}>
+                        <span key={index} className={s.offer__bullet}>//</span>&nbsp;&nbsp;&nbsp;{point}<br /><br />
+                      </Fragment>
+                    );
+                  })
+                }
               </p>
             </div>
             <div className={s.offer__segment}>
@@ -192,7 +216,15 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
 
               <div className={s.offer__number}>04.</div>
               <p className={s.offer__text}>
-                {firstAid.content}
+                {
+                  firstAid.points.map((point, index) => {
+                    return (
+                      <Fragment key={index}>
+                        <span key={index} className={s.offer__bullet}>//</span>&nbsp;&nbsp;&nbsp;{point}<br /><br />
+                      </Fragment>
+                    );
+                  })
+                }
               </p>
             </div>
           </div>

@@ -139,46 +139,46 @@ const Home: FC<IHome> = (props) => {
       title: 'oferujemy szeroką gamę usług w zakresie bhp i ppoż',
       osh: {
         title: 'Zakres usług BHP',
-        content: <>
-          // &nbsp;aspekty prawne i stały nadzór w ramach zadań służb BHP<br /><br />
-          // &nbsp; szkolenia BHP wstępne i okresowe pracowników<br /><br />
-          // &nbsp;ocena i dokumentacja ryzyka zawodowego na stanowiskach pracy<br /><br />
-          // &nbsp;sporządzanie dokumentacji powypadkowej<br /><br />
-          // &nbsp;organizacja pomiarów czynników szkodliwych i uciążliwych<br /><br />
-          // &nbsp;przygotowanie procedur BHP - audyt ISO 45001
-        </>,
+        points: [
+          'aspekty prawne i stały nadzór w ramach zadań służb BHP',
+          'szkolenia BHP wstępne i okresowe pracowników',
+          'ocena i dokumentacja ryzyka zawodowego na stanowiskach pracy',
+          'sporządzanie dokumentacji powypadkowej',
+          'organizacja pomiarów czynników szkodliwych i uciążliwych',
+          'przygotowanie procedur BHP - audyt ISO 45001',
+        ],
       },
       online: {
         title: 'Szkolenia BHP online',
-        content: <>
-          // &nbsp;szkolenia BHP online w języku polskim, angielskim i francuskim<br /><br />
-          // &nbsp;szkolenie można zrealizować w dogodnym momencie<br /><br />
-          // &nbsp;forma szkolenia nie zaburza harmonogramu pracy danego przedsiębiorstwa<br /><br />
-          // &nbsp;duża oszczędność czasu pracowników - bez dojazdów<br /><br />
-          // &nbsp;mniejsze koszty dla pracodawcy niż przypadku szkoleń tradycyjnych<br /><br />
-          // &nbsp;ciekawe materiały oraz lepsze zapamiętywanie przekazywanych treści
-        </>,
+        points: [
+          'szkolenia BHP online w języku polskim, angielskim i francuskim',
+          'szkolenie można zrealizować w dogodnym momencie',
+          'forma szkolenia nie zaburza harmonogramu pracy danego przedsiębiorstwa',
+          'duża oszczędność czasu pracowników - bez dojazdów',
+          'mniejsze koszty dla pracodawcy niż przypadku szkoleń tradycyjnych',
+          'ciekawe materiały oraz lepsze zapamiętywanie przekazywanych treści',
+        ],
       },
       firefighting: {
         title: 'Zakres usług PPOŻ',
-        content: <>
-          // &nbsp;szkolenia z ochrony przeciwpożarowej i użycia podręcznego sprzętu gaśniczego<br /><br />
-          // &nbsp;przeprowadzanie audytów i kontroli stanu ochrony przeciwpożarowej<br /><br />
-          // &nbsp;nadzór nad podręcznym sprzętem gaśniczym<br /><br />
-          // &nbsp;wykonanie instrukcji bezpieczeństwa pożarowego zgodnie z wymogami prawa<br /><br />
-          // &nbsp;opracowanie scenariuszy rozwoju pożarów oraz planów ewakuacyjnych
-        </>,
+        points: [
+          'szkolenia z ochrony przeciwpożarowej i użycia podręcznego sprzętu gaśniczego',
+          'przeprowadzanie audytów i kontroli stanu ochrony przeciwpożarowej',
+          'nadzór nad podręcznym sprzętem gaśniczym',
+          'wykonanie instrukcji bezpieczeństwa pożarowego zgodnie z wymogami prawa',
+          'opracowanie scenariuszy rozwoju pożarów oraz planów ewakuacyjnych',
+        ],
       },
       firstAid: {
         title: 'Zakres usług Pierwszej pomocy',
-        content: <>
-          // &nbsp;aspekty prawne pierwszej pomocy<br /><br />
-          // &nbsp;ocena sytuacji i zabezpieczenie miejsca zdarzenia<br /><br />
-          // &nbsp;ocena stanu poszkodowanego i kontrola czynności życiowych<br /><br />
-          // &nbsp;postępowanie z poszkodowanym nieprzytomnym<br /><br />
-          // &nbsp;resuscytacja krążeniowo-oddechowa<br /><br />
-          // &nbsp;omdlenia, atak serca, padaczka
-        </>,
+        points: [
+          'aspekty prawne pierwszej pomocy',
+          'ocena sytuacji i zabezpieczenie miejsca zdarzenia',
+          'ocena stanu poszkodowanego i kontrola czynności życiowych',
+          'postępowanie z poszkodowanym nieprzytomnym',
+          'resuscytacja krążeniowo-oddechowa',
+          'omdlenia, atak serca, padaczka',
+        ],
       },
 
     },

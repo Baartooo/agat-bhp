@@ -90,9 +90,10 @@
 
 .offer__text {
   @include rf(14, 16);
-
+  
   margin: 0 25px;
-
+  padding-top: 20px;
+  
   font-weight: 200;
   line-height: 1.5;
 
@@ -101,14 +102,23 @@
   }
 }
 
+.offer__bullet {
+  color: $color-white-transparent-text;
+  font-size: inherit;
+  font-weight: 100;
+  font-style: italic;
+}
+
 .offer__number {
   position: absolute;
   top: 15px;
   left: 15px;
 
+  color: $color-white-transparent-text;
   font-size: 30px;
   line-height: 1;
-  font-weight: 200;
+  font-weight: 100;
+  font-style: italic;
 }
 
 .offer__line-top,
@@ -151,7 +161,7 @@
   @media (min-width: $min-desktop) {
     height: 220%;
   }
-  
+
 }
 
 .offer__line-left {
