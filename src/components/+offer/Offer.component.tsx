@@ -55,24 +55,60 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
   const windowSize = useWindowSize();
   const isMobileResolution = isMobile(windowSize, MinBreakpoint.desktop);
 
-
-  let tl = gsap.timeline();
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     if (isMobileResolution) {
+      if (!isAnyRefNull([refLineOneTop, refLineOneBottom, refLineOneLeft, refLineOneRight, refLineThreeBottom, refLineThreeTop, refLineFourBottom])) {
+        gsap.set(refLineOneTop.current, { xPercent: -10, scaleX: 0 });
+        gsap.set(refLineOneBottom.current, { xPercent: -6, scaleX: 0 });
+        gsap.set(refLineThreeTop.current, { xPercent: -2, scaleX: 0 });
+        gsap.set(refLineThreeBottom.current, { xPercent: 2, scaleX: 0 });
+        gsap.set(refLineFourBottom.current, { xPercent: 6, scaleX: 0 });
 
-    } else {
+        gsap.set(refLineOneLeft.current, { yPercent: -2, scaleY: 0, height: '420%' });
+        gsap.set(refLineOneRight.current, { yPercent: 2, scaleY: 0, height: '410%' });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: refTrigger.current,
+            end: '71% 0',
+            once: true,
+            // scrub: 1, // option 2
+          },
+        });
+
+        tl.to([refLineOneTop.current, refLineOneBottom.current, refLineThreeTop.current, refLineThreeBottom.current, refLineFourBottom.current], {
+          scaleX: 1,
+          stagger: 1,
+          ease: 'none',
+          duration: 8, // option 1
+        });
+
+        tl.to([refLineOneLeft.current, refLineOneRight.current], {
+          scaleY: 1,
+          stagger: .1,
+          ease: 'none',
+          duration: 8, // option 1
+        }, '<+1');
+
+
+        return () => {
+          tl.kill();
+        };
+      }
+
+    } else if (isMobileResolution !== null) {
       if (!isAnyRefNull([refLineOneTop, refLineOneBottom, refLineOneLeft, refLineOneRight, refLineTwoRight, refLineThreeBottom, refTrigger])) {
         gsap.set(refLineOneTop.current, { xPercent: -10, scaleX: 0 });
         gsap.set(refLineOneBottom.current, { xPercent: -5, scaleX: 0 });
         gsap.set(refLineThreeBottom.current, { xPercent: 5, scaleX: 0 });
+
         gsap.set(refLineOneLeft.current, { yPercent: -10, scaleY: 0 });
         gsap.set(refLineOneRight.current, { yPercent: -5, scaleY: 0 });
-        gsap.set(refLineTwoRight.current, { yPercent: 10, scaleY: 0 });
+        gsap.set(refLineTwoRight.current, { yPercent: 10, scaleY: 0, height: '200%' });
 
-        tl = gsap.timeline({
+        const tl = gsap.timeline({
           scrollTrigger: {
             trigger: refTrigger.current,
             start: '0% 90%',
