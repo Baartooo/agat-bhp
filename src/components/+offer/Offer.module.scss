@@ -66,7 +66,7 @@
   width: 100%;
 
   flex-direction: column;
-  align-items-content: center;
+  align-items: center;
 
   @media (min-width: $min-desktop) {
     flex-direction: row;
@@ -77,14 +77,11 @@
   position: relative;
   display: flex;
 
-  padding: 100px;
-
   width: 100%;
 
-  justify-content: center;
-  align-items: center;
+  height: 500px;
 
-  border: solid $color-white 1px;
+  align-items: center;
 
   @media (min-width: $min-desktop) {
     width: 50%;
@@ -94,8 +91,14 @@
 .offer__text {
   @include rf(14, 16);
 
+  margin: 0 25px;
+
   font-weight: 200;
   line-height: 1.5;
+
+  @media (min-width: $min-tablet) {
+    margin: 0 50px;
+  }
 }
 
 .offer__number {
@@ -106,4 +109,54 @@
   font-size: 30px;
   line-height: 1;
   font-weight: 200;
+}
+
+.offer__line-top,
+.offer__line-bottom {
+  position: absolute;
+  left: 0;
+
+  width: 110%;
+  height: 1px;
+
+  background-color: $color-white-line;
+
+  transform-origin: 0 0;
+
+  @media (min-width: $min-desktop) {
+    width: 220%;
+  }
+}
+
+.offer__line-top {
+  top: 0;
+}
+
+.offer__line-bottom {
+  bottom: 0;
+}
+
+.offer__line-left,
+.offer__line-right {
+  position: absolute;
+  top: 0;
+
+  width: 1px;
+  height: 450%;
+
+  background-color: $color-white-line;
+
+  transform-origin: 0 0;
+
+  @media (min-width: $min-desktop) {
+    height: 225%;
+  }
+}
+
+.offer__line-left {
+  left: 0;
+}
+
+.offer__line-right {
+  right: 0;
 }
