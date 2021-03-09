@@ -138,7 +138,7 @@ const Home: FC<IHome> = (props) => {
       header: 'oferta',
       title: 'oferujemy szeroką gamę usług w zakresie bhp i ppoż',
       osh: {
-        title: 'Zakres usług BHP',
+        title: 'BHP',
         points: [
           'aspekty prawne i stały nadzór w ramach zadań służb BHP',
           'szkolenia BHP wstępne i okresowe pracowników',
@@ -149,7 +149,7 @@ const Home: FC<IHome> = (props) => {
         ],
       },
       online: {
-        title: 'Szkolenia BHP online',
+        title: 'online',
         points: [
           'szkolenia BHP online w języku polskim, angielskim i francuskim',
           'szkolenie można zrealizować w dogodnym momencie',
@@ -160,7 +160,7 @@ const Home: FC<IHome> = (props) => {
         ],
       },
       firefighting: {
-        title: 'Zakres usług PPOŻ',
+        title: 'PPOŻ',
         points: [
           'szkolenia z ochrony przeciwpożarowej i użycia podręcznego sprzętu gaśniczego',
           'przeprowadzanie audytów i kontroli stanu ochrony przeciwpożarowej',
@@ -170,7 +170,7 @@ const Home: FC<IHome> = (props) => {
         ],
       },
       firstAid: {
-        title: 'Zakres usług Pierwszej pomocy',
+        title: 'Pierwsza pomoc',
         points: [
           'aspekty prawne pierwszej pomocy',
           'ocena sytuacji i zabezpieczenie miejsca zdarzenia',
