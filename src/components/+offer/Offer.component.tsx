@@ -139,7 +139,18 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
 
     }
 
-  }, [isMobileResolution]);
+  }, [
+    isMobileResolution,
+    refTrigger.current,
+    refLineOneTop.current,
+    refLineOneBottom.current,
+    refLineOneLeft.current,
+    refLineOneRight.current,
+    refLineThreeBottom.current,
+    refLineTwoRight.current,
+    refLineThreeTop.current,
+    refLineFourBottom.current,
+  ]);
 
   return (
     <div className={s.offer} id={'offer'}>
