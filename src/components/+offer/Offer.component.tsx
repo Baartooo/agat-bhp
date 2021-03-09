@@ -66,8 +66,8 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
         gsap.set(refLineThreeBottom.current, { xPercent: 2, scaleX: 0 });
         gsap.set(refLineFourBottom.current, { xPercent: 6, scaleX: 0 });
 
-        gsap.set(refLineOneLeft.current, { yPercent: -2, scaleY: 0, height: '420%' });
-        gsap.set(refLineOneRight.current, { yPercent: 2, scaleY: 0, height: '410%' });
+        gsap.set(refLineOneLeft.current, { yPercent: -2, scaleY: 0});
+        gsap.set(refLineOneRight.current, { yPercent: 2, scaleY: 0 });
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -106,7 +106,7 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
 
         gsap.set(refLineOneLeft.current, { yPercent: -10, scaleY: 0 });
         gsap.set(refLineOneRight.current, { yPercent: -5, scaleY: 0 });
-        gsap.set(refLineTwoRight.current, { yPercent: 10, scaleY: 0, height: '200%' });
+        gsap.set(refLineTwoRight.current, { yPercent: 10, scaleY: 0});
 
         const tl = gsap.timeline({
           scrollTrigger: {
