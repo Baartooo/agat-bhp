@@ -91,11 +91,33 @@
   }
 }
 
+.offer__segment-title {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+
+  display: block;
+  
+  padding-bottom: 3px;
+
+  border-bottom: solid 1px $color-white-transparent-text;
+
+  white-space: nowrap;
+
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 100;
+  font-style: italic;
+
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
 .offer__text {
   @include rf(14, 16);
 
   margin: 0 25px;
-  padding-top: 20px;
+  padding-top: 30px;
 
   font-weight: 200;
   line-height: 1.5;
@@ -118,7 +140,7 @@
   left: 15px;
 
   color: $color-white-transparent-text;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 1;
   font-weight: 100;
   font-style: italic;

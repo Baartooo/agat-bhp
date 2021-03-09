@@ -172,6 +172,7 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
               <div className={s.offer__lineRight} ref={refLineOneRight} />
 
               <div className={s.offer__number}>01.</div>
+              <h3 className={s.offer__segmentTitle}>{osh.title}</h3>
               <p className={s.offer__text}>
                 {
                   osh.points.map((point, index) => {
@@ -189,6 +190,7 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
               {!isMobileResolution && <div className={s.offer__lineRight} ref={refLineTwoRight} />}
 
               <div className={s.offer__number}>02.</div>
+              <h3 className={s.offer__segmentTitle}>{online.title}</h3>
               <p className={s.offer__text}>
                 {
                   online.points.map((point, index) => {
@@ -209,6 +211,7 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
               <div className={s.offer__lineBottom} ref={refLineThreeBottom} />
 
               <div className={s.offer__number}>03.</div>
+              <h3 className={s.offer__segmentTitle}>{firefighting.title}</h3>
               <p className={s.offer__text}>
                 {
                   firefighting.points.map((point, index) => {
@@ -226,6 +229,7 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
               {isMobileResolution && <div className={s.offer__lineBottom} ref={refLineFourBottom} />}
 
               <div className={s.offer__number}>04.</div>
+              <h3 className={s.offer__segmentTitle}>{firstAid.title}</h3>
               <p className={s.offer__text}>
                 {
                   firstAid.points.map((point, index) => {
