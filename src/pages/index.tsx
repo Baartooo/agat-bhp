@@ -2,9 +2,11 @@ import React, { FC } from 'react';
 import { FixedObject, FluidObject } from 'gatsby-image';
 import { graphql } from 'gatsby';
 
-import { Start } from 'components/+start/Start.component';
+import { Start } from 'components/start/Start.component';
 import { Collaboration } from 'components/collaboration/Collaboration.component';
 import { About } from '../components/+about/About.component';
+import { Offer } from '../components/+offer/Offer.component';
+import { Contact } from '../components/+contact/Contact.component';
 
 interface IHome {
   data: {
@@ -132,6 +134,54 @@ const Home: FC<IHome> = (props) => {
         },
       ],
     },
+    offer: {
+      header: 'oferta',
+      title: 'oferujemy szeroką gamę usług w zakresie bhp i ppoż',
+      osh: {
+        title: 'Zakres usług BHP',
+        points: [
+          'aspekty prawne i stały nadzór w ramach zadań służb BHP',
+          'szkolenia BHP wstępne i okresowe pracowników',
+          'ocena i dokumentacja ryzyka zawodowego na stanowiskach pracy',
+          'sporządzanie dokumentacji powypadkowej',
+          'organizacja pomiarów czynników szkodliwych i uciążliwych',
+          'przygotowanie procedur BHP - audyt ISO 45001',
+        ],
+      },
+      online: {
+        title: 'Szkolenia BHP online',
+        points: [
+          'szkolenia BHP online w języku polskim, angielskim i francuskim',
+          'szkolenie można zrealizować w dogodnym momencie',
+          'forma szkolenia nie zaburza harmonogramu pracy danego przedsiębiorstwa',
+          'duża oszczędność czasu pracowników - bez dojazdów',
+          'mniejsze koszty dla pracodawcy niż przypadku szkoleń tradycyjnych',
+          'ciekawe materiały oraz lepsze zapamiętywanie przekazywanych treści',
+        ],
+      },
+      firefighting: {
+        title: 'Zakres usług PPOŻ',
+        points: [
+          'szkolenia z ochrony przeciwpożarowej i użycia podręcznego sprzętu gaśniczego',
+          'przeprowadzanie audytów i kontroli stanu ochrony przeciwpożarowej',
+          'nadzór nad podręcznym sprzętem gaśniczym',
+          'wykonanie instrukcji bezpieczeństwa pożarowego zgodnie z wymogami prawa',
+          'opracowanie scenariuszy rozwoju pożarów oraz planów ewakuacyjnych',
+        ],
+      },
+      firstAid: {
+        title: 'Zakres usług Pierwszej pomocy',
+        points: [
+          'aspekty prawne pierwszej pomocy',
+          'ocena sytuacji i zabezpieczenie miejsca zdarzenia',
+          'ocena stanu poszkodowanego i kontrola czynności życiowych',
+          'postępowanie z poszkodowanym nieprzytomnym',
+          'resuscytacja krążeniowo-oddechowa',
+          'omdlenia, atak serca, padaczka',
+        ],
+      },
+
+    },
   };
 
   return (
@@ -150,6 +200,15 @@ const Home: FC<IHome> = (props) => {
         header={content.collab.header}
         logos={content.collab.logos}
       />
+      <Offer
+        header={content.offer.header}
+        title={content.offer.title}
+        osh={content.offer.osh}
+        online={content.offer.online}
+        firefighting={content.offer.firefighting}
+        firstAid={content.offer.firstAid}
+      />
+      <Contact />
     </>
   );
 };
