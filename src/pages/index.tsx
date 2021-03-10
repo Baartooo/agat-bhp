@@ -162,7 +162,7 @@ const Home: FC<IHome> = (props) => {
         points: [
           'szkolenia BHP online w języku polskim, angielskim i francuskim',
           'szkolenie można zrealizować w dogodnym momencie',
-          'forma szkolenia nie zaburza harmonogramu pracy danego przedsiębiorstwa',
+          'forma szkolenia nie zaburza harmonogramu pracy',
           'duża oszczędność czasu pracowników - bez dojazdów',
           'mniejsze koszty dla pracodawcy niż przypadku szkoleń tradycyjnych',
           'ciekawe materiały oraz lepsze zapamiętywanie przekazywanych treści',
@@ -171,11 +171,11 @@ const Home: FC<IHome> = (props) => {
       firefighting: {
         title: 'PPOŻ',
         points: [
-          'szkolenia z ochrony przeciwpożarowej i użycia podręcznego sprzętu gaśniczego',
+          'szkolenia z ochrony przeciwpożarowej i sprzętu gaśniczego',
           'przeprowadzanie audytów i kontroli stanu ochrony przeciwpożarowej',
           'nadzór nad podręcznym sprzętem gaśniczym',
-          'wykonanie instrukcji bezpieczeństwa pożarowego zgodnie z wymogami prawa',
-          'opracowanie scenariuszy rozwoju pożarów oraz planów ewakuacyjnych',
+          'wykonanie instrukcji bezpieczeństwa pożarowego',
+          'opracowanie planów ewakuacyjnych',
         ],
       },
       firstAid: {
