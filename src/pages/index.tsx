@@ -198,7 +198,7 @@ const Home: FC<IHome> = (props) => {
       invite: 'Zapraszam do kontaktu i współpracy',
       degrees: 'mgr inż.',
       name: 'Agnieszka Gajos',
-      job: 'Główny specjalista ds. BHP',
+      job: 'Główny Specjalista ds. BHP',
     },
   };
 
