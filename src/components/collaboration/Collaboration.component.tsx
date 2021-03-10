@@ -10,7 +10,10 @@ import { SectionHeader } from 'shared/section-header/SectionHeader.component';
 import s from './Collaboration.module.scss';
 
 interface ICollaboration {
-  background: FixedObject;
+  background: {
+    img: FixedObject,
+    alt: string,
+  };
   logos: LogoData[]
   header: string;
 }
@@ -57,7 +60,8 @@ export const Collaboration: FC<ICollaboration> = ({ background, header, logos })
       <SectionHeader content={header} />
       <div className={s.collaboration__background}>
         <GatsbyImage
-          fixed={background}
+          fixed={background.img}
+          alt={background.alt}
           className={s.collaboration__backgroundImage}
           imgStyle={{
             objectPosition: '48% 50%',
@@ -69,7 +73,8 @@ export const Collaboration: FC<ICollaboration> = ({ background, header, logos })
       <div className={s.collaboration__logos} ref={refLogosWrapper}>
         {
           logos.map((logo) => (
-            <a href={logo.url} className={s.collaboration__logo} key={logo.name} target={'_blank'} rel={'noopener noreferrer'}>
+            <a href={logo.url} className={s.collaboration__logo} key={logo.name} target={'_blank'}
+               rel={'noopener noreferrer'}>
               <GatsbyImage fluid={logo.childImageSharp.fluid} className={s.collaboration__logoImg} alt={logo.alt} />
             </a>
           ))
