@@ -28,6 +28,28 @@
   z-index: 15;
 }
 
+.contact__invite {
+  @include rf(25, 40);
+
+  position: absolute;
+  top: 150px;
+  left: 50%;
+
+  width: 80%;
+
+  text-align: center;
+
+  font-weight: 200;
+
+  transform: translateX(-50%);
+
+  z-index: 20;
+  
+  @media (min-width: $min-tablet) {
+    top: 200px;
+  }
+}
+
 .contact__content {
   @include container;
 
@@ -44,8 +66,8 @@
 
   z-index: 20;
 
-  @media (min-width: $min-tablet) {
-    padding-bottom: 200px;
+  @media (min-width: $min-desktop) {
+    padding-bottom: 150px;
   }
 }
 
@@ -60,7 +82,7 @@
 }
 
 .contact__title {
-  @include rf(40, 50);
+  @include rf(30, 40);
   display: flex;
 
   font-weight: 700;
@@ -82,7 +104,7 @@
   transition: 200ms;
 
   &:hover {
-    opacity: .6;
+    opacity: .4;
   }
 
   @media (min-width: $min-tablet) {
@@ -106,7 +128,7 @@
 }
 
 .contact__target {
-  @include rf(16, 30);
+  @include rf(14, 25);
 
   margin-left: 10px;
 

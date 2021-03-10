@@ -183,9 +183,10 @@ const Home: FC<IHome> = (props) => {
     },
     contact: {
       header: 'Kontakt',
-      phone: '',
-      mail: '',
-      www: '',
+      phone: '+48 728 324 803',
+      mail: 'agat.bhp@gmail.com',
+      www: 'agat-bhp.pl',
+      invite: 'Zapraszamy do kontaktu i&nbsp;współpracy',
     },
   };
 
@@ -213,7 +214,13 @@ const Home: FC<IHome> = (props) => {
         firefighting={content.offer.firefighting}
         firstAid={content.offer.firstAid}
       />
-      <Contact header={content.contact.header} />
+      <Contact
+        header={content.contact.header}
+        mail={content.contact.mail}
+        phone={content.contact.phone}
+        www={content.contact.www}
+        invite={content.contact.invite}
+      />
     </>
   );
 };
