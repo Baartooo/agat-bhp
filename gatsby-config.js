@@ -10,7 +10,10 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      exclude: [`/404`],
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

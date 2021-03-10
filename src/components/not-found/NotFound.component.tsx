@@ -9,9 +9,11 @@ export const NotFound: FC = () => (
   <div className={s.notFound}>
 
     <div className={s.notFound__wrapper}>
-      <div className={s.notFound__logo}>
-        <AgatBHP className={s.notFound__logoSvg} />
-      </div>
+      <Link to={'/'}>
+        <div className={s.notFound__logo}>
+          <AgatBHP className={s.notFound__logoSvg} />
+        </div>
+      </Link>
 
       <p className={s.notFound__content}>
         Nie znaleziono strony, której szukasz.<br />
