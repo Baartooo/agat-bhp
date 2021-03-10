@@ -1,0 +1,61 @@
+@import "src/styles/config";
+
+.not-found {
+  display: flex;
+
+  width: 100vw;
+  height: 100vh;
+
+  justify-content: center;
+  align-self: center;
+}
+
+.not-found__wrapper {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found__logo {
+  margin-bottom: 50px;
+
+  width: 150px;
+  height: auto;
+
+  &Svg {
+    width: 100%;
+    height: auto;
+
+    path {
+      fill: $color-white;
+    }
+  }
+
+  @media (min-width: $min-mobile) {
+    width: 200px;
+  }
+
+  @media (min-width: $min-tablet) {
+    width: 250px;
+  }
+}
+
+.not-found__content {
+  @include rf(17, 30);
+
+  color: $color-white-transparent-text;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: .05em;
+}
+
+.not-found__link {
+  color: $color-white;
+
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: none;
+  white-space: nowrap;
+}
