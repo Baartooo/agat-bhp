@@ -86,7 +86,10 @@ const Home: FC<IHome> = (props) => {
     start: {
       firstLine: 'kompleksowa obsługa bhp i ppoż',
       secondLine: 'bezpieczeństwo jest w twoich rękach!',
-      background: backgroundStart.childImageSharp.fixed,
+      background: {
+        img: backgroundStart.childImageSharp.fixed,
+        alt: 'miasto widoczne z góry',
+      },
     },
     navigation: {
       start: 'start',
@@ -95,11 +98,17 @@ const Home: FC<IHome> = (props) => {
       contact: 'kontakt',
     },
     about: {
-      background: backgroundAbout.childImageSharp.fixed,
+      background: {
+        img: backgroundAbout.childImageSharp.fixed,
+        alt: 'kopara górnicza',
+      },
       header: 'o nas',
     },
     collab: {
-      background: backgroundCollab.childImageSharp.fixed,
+      background: {
+        img: backgroundCollab.childImageSharp.fixed,
+        alt: 'zespół ludzi',
+      },
       header: 'zaufali nam między innymi',
       logos: [
         {

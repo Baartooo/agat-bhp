@@ -13,7 +13,10 @@ import s from './Start.module.scss';
 
 
 interface IStart {
-  background: FixedObject;
+  background: { 
+    img: FixedObject
+    alt: string
+  };
   content: StartContent;
   navigationContent: NavigationContent;
 }
@@ -78,7 +81,8 @@ export const Start: FC<IStart> = ({ background, content, navigationContent }) =>
       <section className={s.start} id={'start'}>
         <div className={s.start__background}>
           <GatsbyImage
-            fixed={background}
+            fixed={background.img}
+            alt={background.alt}
             className={s.start__backgroundImage}
           />
           <div className={s.start__backgroundOverlay} />

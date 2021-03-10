@@ -8,7 +8,10 @@ import Trophy from 'assets/svg/trophy.svg';
 import s from './About.module.scss';
 
 interface IAbout {
-  background: FixedObject;
+  background: {
+    img: FixedObject,
+    alt: string
+  };
   header: string;
 }
 
@@ -18,7 +21,8 @@ export const About: FC<IAbout> = ({ background, header }) => {
       <SectionHeader content={header} />
       <div className={s.about__background}>
         <GatsbyImage
-          fixed={background}
+          fixed={background.img}
+          alt={background.alt}
           className={s.about__backgroundImage}
           imgStyle={{
             objectPosition: '55% 50%',
