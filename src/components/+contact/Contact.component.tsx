@@ -5,6 +5,7 @@ import { SectionHeader } from 'shared/section-header/SectionHeader.component';
 import Hex from 'assets/svg/contact-background.svg';
 import Mail from 'assets/svg/mail.svg';
 import Phone from 'assets/svg/phone-call.svg';
+import WWW from 'assets/svg/www.svg';
 
 import s from './Contact.module.scss';
 
@@ -26,7 +27,7 @@ export const Contact: FC<IContact> = ({ header }) => {
           <div className={s.contact__titleWrapper}>
             <h3 className={s.contact__title}>{header}</h3>
           </div>
-          
+
           <a href={'#'} className={s.contact__group}>
             <div className={s.contact__icon}>
               <Mail className={s.contact__iconSvg} />
@@ -42,6 +43,15 @@ export const Contact: FC<IContact> = ({ header }) => {
             </div>
             <div className={s.contact__target}>
               +48 728 329 803
+            </div>
+          </a>
+
+          <a href={'#'} className={s.contact__group}>
+            <div className={s.contact__icon}>
+              <WWW className={s.contact__iconSvg} />
+            </div>
+            <div className={s.contact__target}>
+              agat-bhp.pl
             </div>
           </a>
 

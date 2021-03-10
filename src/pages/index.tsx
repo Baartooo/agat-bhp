@@ -183,6 +183,9 @@ const Home: FC<IHome> = (props) => {
     },
     contact: {
       header: 'Kontakt',
+      phone: '',
+      mail: '',
+      www: '',
     },
   };
 
