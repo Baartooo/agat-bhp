@@ -19,7 +19,7 @@ interface IContact {
 
 export const Contact: FC<IContact> = ({ header, mail, phone, www, invite }) => {
   return (
-    <div className={s.contact}>
+    <div className={s.contact} id={'contact'}>
       <SectionHeader content={header} />
       <div className={s.contact__background}>
         <Hex className={s.contact__backgroundSvg} />

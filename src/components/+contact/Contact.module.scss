@@ -43,7 +43,7 @@
 
   transform: translateX(-50%);
 
-  z-index: 20;
+  z-index: 30;
   
   @media (min-width: $min-tablet) {
     top: 200px;
@@ -79,6 +79,8 @@
 
 .contact__titleWrapper {
   display: flex;
+  
+  margin-bottom: 10px;
 }
 
 .contact__title {
