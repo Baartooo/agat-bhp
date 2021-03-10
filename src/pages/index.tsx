@@ -180,7 +180,9 @@ const Home: FC<IHome> = (props) => {
           'omdlenia, atak serca, padaczka',
         ],
       },
-
+    },
+    contact: {
+      header: 'Kontakt',
     },
   };
 
@@ -208,7 +210,7 @@ const Home: FC<IHome> = (props) => {
         firefighting={content.offer.firefighting}
         firstAid={content.offer.firstAid}
       />
-      <Contact />
+      <Contact header={content.contact.header} />
     </>
   );
 };

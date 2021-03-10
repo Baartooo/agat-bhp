@@ -1,6 +1,110 @@
 @import "src/styles/config";
 
 .contact {
+  position: relative;
+
+  padding-top: 80px;
+
   width: 100%;
   height: 100vh;
+}
+
+.contact__background {
+  @include fit;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 10;
+}
+
+.contact__overlay {
+  @include fit;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(75deg, $color-dark-background, $color-white-transparent 450%);
+  z-index: 15;
+}
+
+.contact__content {
+  @include container;
+
+  position: relative;
+
+  display: flex;
+
+  padding-bottom: 200px;
+
+  height: 100%;
+  width: 100%;
+
+  align-items: flex-end;
+
+  z-index: 20;
+}
+
+.contact__info {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.contact__titleWrapper {
+  display: flex;
+}
+
+.contact__title {
+  @include rf(40, 50);
+  display: flex;
+
+  font-weight: 700;
+  line-height: 1.2;
+
+  border-bottom: 1px solid $color-white;
+}
+
+.contact__group {
+  display: flex;
+
+  margin-top: 30px;
+
+  align-items: center;
+
+  text-decoration: none;
+  color: $color-white;
+
+  transition: 200ms;
+
+  &:hover {
+    opacity: .6;
+  }
+}
+
+.contact__icon {
+  width: 20px;
+  height: 20px;
+
+  &Svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: $min-tablet) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.contact__target {
+  @include rf(16, 30);
+
+  margin-left: 10px;
+
+  line-height: 1;
+
+  @media (min-width: $min-tablet) {
+    margin-left: 20px;
+  }
 }
