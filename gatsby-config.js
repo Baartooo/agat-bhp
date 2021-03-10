@@ -3,12 +3,14 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     header: 'Agat BHP',
+    siteUrl: 'https://agat-bhp.pl',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
