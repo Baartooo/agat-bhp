@@ -14,7 +14,7 @@ interface IAbout {
 
 export const About: FC<IAbout> = ({ background, header }) => {
   return (
-    <div className={s.about} id={'about'}>
+    <section className={s.about} id={'about'}>
       <SectionHeader content={header} />
       <div className={s.about__background}>
         <GatsbyImage
@@ -28,7 +28,7 @@ export const About: FC<IAbout> = ({ background, header }) => {
       </div>
       <div className={s.about__content}>
         <div className={s.about__section}>
-          <h2 className={s.about__title}>Kim jesteśmy?</h2>
+          <h3 className={s.about__title}>Kim jesteśmy?</h3>
           <p className={s.about__paragraph}>
             Zajmujemy się <span className={s.about__bold}>obsługą firm pod względem BHP, prowadzeniem szkoleń BHP i ochroną przeciwpożarową.</span> Dysponujemy
             profesjonalną, wykształconą kadrą, posiadającą <span className={s.about__bold}>odpowiednie kwalifikacje i uprawnienia</span>,
@@ -48,7 +48,7 @@ export const About: FC<IAbout> = ({ background, header }) => {
           </p>
         </div>
         <div className={s.about__section}>
-          <h2 className={s.about__title}>Osiągnięcia</h2>
+          <h3 className={s.about__title}>Osiągnięcia</h3>
           <div className={s.about__prizeSegment}>
             <div className={s.about__trophy}>
               <Trophy className={s.about__trophySvg} />
@@ -78,6 +78,6 @@ export const About: FC<IAbout> = ({ background, header }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

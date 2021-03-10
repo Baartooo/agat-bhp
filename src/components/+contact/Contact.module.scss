@@ -1,6 +1,182 @@
 @import "src/styles/config";
 
 .contact {
+  position: relative;
+
+  padding-top: 80px;
+
   width: 100%;
   height: 100vh;
+  min-height: 500px;
+}
+
+.contact__background {
+  @include fit;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 10;
+}
+
+.contact__overlay {
+  @include fit;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(75deg, $color-dark-background, $color-white-transparent 450%);
+  z-index: 15;
+}
+
+.contact__invitation {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  transform: translateX(-50%);
+
+  z-index: 30;
+
+  @media (min-width: $min-tablet) {
+    top: 200px;
+  }
+}
+
+.contact__invitation-content {
+  @include rf(20, 40);
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  font-weight: 200;
+  font-style: italic;
+}
+
+.contact__invitation-name {
+  @include rf(14, 20);
+
+  margin-top: 15px;
+
+  align-self: flex-end;
+
+  line-height: 2;
+}
+
+.contact__invitation-degrees {
+  font-weight: 300;
+}
+
+.contact__invitation-identity {
+  font-weight: 700;
+}
+
+.contact__invitation-job {
+  @include rf(14, 20);
+
+  align-self: flex-end;
+
+  color: $color-white-transparent-text;
+  font-weight: 200;
+}
+
+.contact__content {
+  @include container;
+
+  position: relative;
+
+  display: flex;
+
+  padding-bottom: 50px;
+
+  height: 100%;
+  width: 100%;
+
+  align-items: flex-end;
+
+  z-index: 20;
+
+  @media (min-width: $min-tablet) {
+    padding-bottom: 100px;
+  }
+
+  @media (min-width: $min-desktop) {
+    padding-bottom: 150px;
+  }
+}
+
+.contact__info {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.contact__titleWrapper {
+  display: flex;
+
+  margin-bottom: 10px;
+}
+
+.contact__title {
+  @include rf(30, 40);
+  display: flex;
+
+  border-bottom: 1px solid $color-white;
+
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.contact__group {
+  display: flex;
+
+  margin-top: 20px;
+
+  align-items: center;
+
+  text-decoration: none;
+  color: $color-white;
+
+  transition: 200ms;
+
+  &:hover {
+    opacity: .4;
+  }
+
+  @media (min-width: $min-tablet) {
+    margin-top: 30px;
+  }
+}
+
+.contact__icon {
+  width: 20px;
+  height: 20px;
+
+  &Svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: $min-tablet) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.contact__target {
+  @include rf(14, 25);
+
+  margin-left: 10px;
+
+  line-height: 1;
+
+  @media (min-width: $min-tablet) {
+    margin-left: 20px;
+  }
 }

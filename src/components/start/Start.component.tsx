@@ -75,7 +75,7 @@ export const Start: FC<IStart> = ({ background, content, navigationContent }) =>
   return (
     <>
       <Navigation refNav={refNav} navigationContent={navigationContent} />
-      <div className={s.start} id={'start'}>
+      <section className={s.start} id={'start'}>
         <div className={s.start__background}>
           <GatsbyImage
             fixed={background}
@@ -89,9 +89,9 @@ export const Start: FC<IStart> = ({ background, content, navigationContent }) =>
             <AgatBHP className={s.start__logoSvg} />
           </div>
           <h1 className={s.start__title} ref={refFirstLine}>{content.firstLine}</h1>
-          <h2 className={s.start__title} ref={refSecondLine}>{content.secondLine}</h2>
+          <h1 className={s.start__title} ref={refSecondLine}>{content.secondLine}</h1>
         </div>
-      </div>
+      </section>
     </>
   );
 };

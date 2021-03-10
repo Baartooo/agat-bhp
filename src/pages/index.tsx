@@ -180,7 +180,16 @@ const Home: FC<IHome> = (props) => {
           'omdlenia, atak serca, padaczka',
         ],
       },
-
+    },
+    contact: {
+      header: 'Kontakt',
+      phone: '+48 728 329 803',
+      mail: 'agat.bhp@gmail.com',
+      www: 'agat-bhp.pl',
+      invite: 'Zapraszam do kontaktu i współpracy',
+      degrees: 'mgr inż.',
+      name: 'Agnieszka Gajos',
+      job: 'Główny specjalista ds. BHP',
     },
   };
 
@@ -208,7 +217,16 @@ const Home: FC<IHome> = (props) => {
         firefighting={content.offer.firefighting}
         firstAid={content.offer.firstAid}
       />
-      <Contact />
+      <Contact
+        header={content.contact.header}
+        mail={content.contact.mail}
+        phone={content.contact.phone}
+        www={content.contact.www}
+        invite={content.contact.invite}
+        degrees={content.contact.degrees}
+        name={content.contact.name}
+        job={content.contact.job}
+      />
     </>
   );
 };

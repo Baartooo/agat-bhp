@@ -153,15 +153,15 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
   ]);
 
   return (
-    <div className={s.offer} id={'offer'}>
+    <section className={s.offer} id={'offer'}>
       <SectionHeader content={header} />
       <div className={s.offer__wrapper}>
-        <h2 className={s.offer__title}>
+        <h3 className={s.offer__title}>
           {title}
           <div className={s.offer__underline}>
             <Underline className={s.offer__underlineSvg} />
           </div>
-        </h2>
+        </h3>
         <div className={s.offer__content} ref={refTrigger}>
           <div className={s.offer__row}>
             <div className={s.offer__segment}>
@@ -245,6 +245,6 @@ export const Offer: FC<IOffer> = ({ header, title, osh, online, firefighting, fi
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

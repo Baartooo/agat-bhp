@@ -9,7 +9,7 @@ interface ISectionHeader {
 export const SectionHeader: FC<ISectionHeader> = ({ content }) => {
   return (
     <div className={s.sectionHeader}>
-      <span className={s.sectionHeader__content}>{content}</span>
+      <h2 className={s.sectionHeader__content}>{content}</h2>
     </div>
   );
 };
