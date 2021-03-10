@@ -7,6 +7,7 @@
 
   width: 100%;
   height: 100vh;
+  min-height: 500px;
 }
 
 .contact__background {
@@ -28,26 +29,61 @@
   z-index: 15;
 }
 
-.contact__invite {
-  @include rf(25, 40);
-
+.contact__invitation {
   position: absolute;
   top: 150px;
   left: 50%;
 
-  width: 80%;
+  display: flex;
 
-  text-align: center;
-
-  font-weight: 200;
+  flex-direction: column;
+  align-items: center;
 
   transform: translateX(-50%);
 
   z-index: 30;
-  
+
   @media (min-width: $min-tablet) {
     top: 200px;
   }
+}
+
+.contact__invitation-content {
+  @include rf(18, 40);
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  font-weight: 200;
+  font-style: italic;
+}
+
+.contact__invitation-name {
+  @include rf(14, 20);
+
+  margin-top: 15px;
+
+  align-self: flex-end;
+
+  line-height: 2;
+}
+
+.contact__invitation-degrees {
+  font-weight: 300;
+}
+
+.contact__invitation-identity {
+  font-weight: 700;
+}
+
+.contact__invitation-job {
+  @include rf(14, 20);
+
+  align-self: flex-end;
+
+  color: $color-white-transparent-text;
+  font-weight: 200;
 }
 
 .contact__content {
@@ -57,7 +93,7 @@
 
   display: flex;
 
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 
   height: 100%;
   width: 100%;
@@ -65,6 +101,10 @@
   align-items: flex-end;
 
   z-index: 20;
+
+  @media (min-width: $min-tablet) {
+    padding-bottom: 100px;
+  }
 
   @media (min-width: $min-desktop) {
     padding-bottom: 150px;
@@ -79,7 +119,7 @@
 
 .contact__titleWrapper {
   display: flex;
-  
+
   margin-bottom: 10px;
 }
 

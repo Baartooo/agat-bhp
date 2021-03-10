@@ -183,10 +183,13 @@ const Home: FC<IHome> = (props) => {
     },
     contact: {
       header: 'Kontakt',
-      phone: '+48 728 324 803',
+      phone: '+48 728 329 803',
       mail: 'agat.bhp@gmail.com',
       www: 'agat-bhp.pl',
-      invite: 'Zapraszamy do kontaktu i&nbsp;współpracy',
+      invite: 'Zapraszam do kontaktu i współpracy',
+      degrees: 'mgr inż.',
+      name: 'Agnieszka Gajos',
+      job: 'Główny specjalista ds. BHP',
     },
   };
 
@@ -220,6 +223,9 @@ const Home: FC<IHome> = (props) => {
         phone={content.contact.phone}
         www={content.contact.www}
         invite={content.contact.invite}
+        degrees={content.contact.degrees}
+        name={content.contact.name}
+        job={content.contact.job}
       />
     </>
   );

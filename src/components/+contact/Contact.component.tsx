@@ -15,9 +15,12 @@ interface IContact {
   phone: string;
   www: string;
   invite: string;
+  degrees: string;
+  name: string;
+  job: string;
 }
 
-export const Contact: FC<IContact> = ({ header, mail, phone, www, invite }) => {
+export const Contact: FC<IContact> = ({ header, mail, phone, www, invite, degrees, name, job }) => {
   return (
     <div className={s.contact} id={'contact'}>
       <SectionHeader content={header} />
@@ -26,7 +29,14 @@ export const Contact: FC<IContact> = ({ header, mail, phone, www, invite }) => {
       </div>
       <div className={s.contact__overlay} />
 
-      <div className={s.contact__invite} dangerouslySetInnerHTML={{ __html: invite }} />
+      <div className={s.contact__invitation}>
+        <p className={s.contact__invitationContent}>{invite}</p>
+        <div className={s.contact__invitationName}>
+          <span className={s.contact__invitationDegrees}>{degrees}&nbsp;</span>
+          <span className={s.contact__invitationIdentity}>{name}</span>
+        </div>
+        <div className={s.contact__invitationJob}>{job}</div>
+      </div>
 
       <div className={s.contact__content}>
         <div className={s.contact__info}>
