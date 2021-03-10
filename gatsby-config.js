@@ -43,5 +43,12 @@ module.exports = {
         component: require.resolve('./src/shared/components/app-layout/AppLayout.tsx'),
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-WB8LWJ9',
+        includeInDevelopment: false,
+      },
+    },
   ],
 };
