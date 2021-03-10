@@ -14,7 +14,7 @@ interface IAbout {
 
 export const About: FC<IAbout> = ({ background, header }) => {
   return (
-    <div className={s.about} id={'about'}>
+    <section className={s.about} id={'about'}>
       <SectionHeader content={header} />
       <div className={s.about__background}>
         <GatsbyImage
@@ -78,6 +78,6 @@ export const About: FC<IAbout> = ({ background, header }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -14,11 +14,11 @@ interface INavMobile {
 
 export const NavMobile: FC<INavMobile> = ({ refWrapper, navigationContent, closeNavAndGoTo }) => {
   return (
-    <div className={s.navMobile} ref={refWrapper}>
+    <nav className={s.navMobile} ref={refWrapper}>
       <NavItem text={navigationContent.start} onClick={() => closeNavAndGoTo('start')} />
       <NavItem text={navigationContent.about} onClick={() => closeNavAndGoTo('about')} />
       <NavItem text={navigationContent.offer} onClick={() => closeNavAndGoTo('offer')} />
       <NavItem text={navigationContent.contact} onClick={() => closeNavAndGoTo('contact')} />
-    </div>
+    </nav>
   );
 };

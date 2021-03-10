@@ -22,7 +22,7 @@ interface IContact {
 
 export const Contact: FC<IContact> = ({ header, mail, phone, www, invite, degrees, name, job }) => {
   return (
-    <div className={s.contact} id={'contact'}>
+    <section className={s.contact} id={'contact'}>
       <SectionHeader content={header} />
       <div className={s.contact__background}>
         <Hex className={s.contact__backgroundSvg} />
@@ -73,6 +73,6 @@ export const Contact: FC<IContact> = ({ header, mail, phone, www, invite, degree
 
         </div>
       </div>
-    </div>
+    </section>
   );
 };

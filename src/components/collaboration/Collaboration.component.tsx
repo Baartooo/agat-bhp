@@ -53,7 +53,7 @@ export const Collaboration: FC<ICollaboration> = ({ background, header, logos })
   }, [refLogosWrapper.current, refCollab.current]);
 
   return (
-    <div className={s.collaboration} ref={refCollab} id={'collaboration'}>
+    <section className={s.collaboration} ref={refCollab} id={'collaboration'}>
       <SectionHeader content={header} />
       <div className={s.collaboration__background}>
         <GatsbyImage
@@ -76,6 +76,6 @@ export const Collaboration: FC<ICollaboration> = ({ background, header, logos })
         }
       </div>
 
-    </div>
+    </section>
   );
 };
