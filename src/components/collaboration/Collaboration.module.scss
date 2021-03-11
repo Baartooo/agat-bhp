@@ -3,70 +3,16 @@
 .collaboration {
   position: relative;
 
+  padding: 100px 0 80px;
+
   display: flex;
 
   width: 100%;
-  min-height: 100vh;
 
   justify-content: center;
   align-items: center;
 }
 
-.collaboration__background {
-  @include fit;
-
-  height: 100%;
-}
-
-.collaboration__background-image {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-.collaboration__background-overlay {
-  @include fit;
-
-  background-color: $color-collaborate-overlay;
-}
-
-.collaboration__logos {
-  @include container;
-  @include grid-col(15);
-
-  display: flex;
-
-  padding: 100px 0 50px;
-
-  width: 100%;
-  min-height: 100%;
-
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-
-  z-index: 300;
-}
-
 .collaboration__logo {
-  display: block;
 
-  margin: 20px 0;
-
-  width: 60%;
-
-  visibility: hidden;
-
-  cursor: pointer;
-  
-
-  @media (min-width: $min-tablet) {
-    margin: 0;
-    
-    width: 40%;
-  }
-
-  @media (min-width: $min-desktop) {
-    width: 34%;
-  }
 }

@@ -58,27 +58,9 @@ export const Collaboration: FC<ICollaboration> = ({ background, header, logos })
   return (
     <section className={s.collaboration} ref={refCollab} id={'collaboration'}>
       <SectionHeader content={header} />
-      <div className={s.collaboration__background}>
-        <GatsbyImage
-          fixed={background.img}
-          alt={background.alt}
-          className={s.collaboration__backgroundImage}
-          imgStyle={{
-            objectPosition: '48% 50%',
-          }}
-        />
-        <div className={s.collaboration__backgroundOverlay} />
-      </div>
 
-      <div className={s.collaboration__logos} ref={refLogosWrapper}>
-        {
-          logos.map((logo) => (
-            <a href={logo.url} className={s.collaboration__logo} key={logo.name} target={'_blank'}
-               rel={'noopener noreferrer'}>
-              <GatsbyImage fluid={logo.childImageSharp.fluid} className={s.collaboration__logoImg} alt={logo.alt} />
-            </a>
-          ))
-        }
+      <div className={s.collaboration__wrapper}>
+        
       </div>
 
     </section>
