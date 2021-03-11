@@ -3,7 +3,6 @@ import { FixedObject } from 'gatsby-image';
 import { graphql } from 'gatsby';
 
 import { Start } from 'components/start/Start.component';
-import { Collaboration } from 'components/collaboration/Collaboration.component';
 import { About } from '../components/+about/About.component';
 import { Offer } from '../components/+offer/Offer.component';
 import { Contact } from '../components/+contact/Contact.component';
@@ -16,76 +15,10 @@ interface IHome {
         fixed: FixedObject
       }
     }
-    backgroundCollab: {
-      name: string;
-      childImageSharp: {
-        fixed: FixedObject
-      }
-    }
     backgroundAbout: {
       name: string;
       childImageSharp: {
         fixed: FixedObject
-      }
-    }
-    higher: {
-      name: string;
-      childImageSharp: {
-        fluid: FixedObject
-      }
-    }
-    termoRex: {
-      name: string;
-      childImageSharp: {
-        fluid: FixedObject
-      }
-    }
-    investSteel: {
-      name: string;
-      childImageSharp: {
-        fluid: FixedObject
-      }
-    }
-    imprezoweZakupy: {
-      name: string;
-      childImageSharp: {
-        fluid: FixedObject
-      }
-    }
-    odziezDlaMedyka: {
-      name: string;
-      childImageSharp: {
-        fluid: FixedObject
-      }
-    }
-    weddingStore: {
-      name: string;
-      childImageSharp: {
-        fluid: FixedObject
-      }
-    }
-    albi: {
-      name: string;
-      childImageSharp: {
-        fluid: FixedObject
-      }
-    }
-    dawPar: {
-      name: string;
-      childImageSharp: {
-        fluid: FixedObject
-      }
-    }
-    elastolab: {
-      name: string;
-      childImageSharp: {
-        fluid: FixedObject
-      }
-    }
-    gbu: {
-      name: string;
-      childImageSharp: {
-        fluid: FixedObject
       }
     }
   }
@@ -95,18 +28,7 @@ const Home: FC<IHome> = (props) => {
   const {
     data: {
       backgroundStart,
-      backgroundCollab,
       backgroundAbout,
-      higher,
-      termoRex,
-      investSteel,
-      weddingStore,
-      odziezDlaMedyka,
-      imprezoweZakupy,
-      albi,
-      elastolab,
-      dawPar,
-      gbu,
     },
   } = props;
 
@@ -131,67 +53,6 @@ const Home: FC<IHome> = (props) => {
         alt: 'kopara górnicza',
       },
       header: 'o nas',
-    },
-    collab: {
-      background: {
-        img: backgroundCollab.childImageSharp.fixed,
-        alt: 'zespół ludzi',
-      },
-      header: 'zaufali nam między innymi',
-      rtl: [
-        // {
-        //   ...higher,
-        //   url: 'http://higher.com.pl',
-        //   alt: 'Logo Higher',
-        // },
-        {
-          ...investSteel,
-          url: 'http://investsteel.pl/wspolpraca/',
-          alt: 'Logo InvestSteel',
-        },
-        {
-          ...termoRex,
-          url: 'https://termo-rex.pl/',
-          alt: 'Logo TermoRex',
-        },
-        {
-          ...odziezDlaMedyka,
-          url: 'https://odziezdlamedyka.pl/',
-          alt: 'Logo Odzież Dla Medyka',
-        },
-        {
-          ...elastolab,
-          url: '#',
-          alt: 'Logo Elastolab',
-        },
-        {
-          ...gbu,
-          url: '#',
-          alt: 'Logo GBU',
-        },
-      ],
-      ltr: [
-        {
-          ...albi,
-          url: '#',
-          alt: 'Logo Albi',
-        },
-        {
-          ...weddingStore,
-          url: 'https://weddingstore.pl/',
-          alt: 'Logo Wedding Store',
-        },
-        {
-          ...imprezoweZakupy,
-          url: 'https://imprezowezakupy.pl/',
-          alt: 'Logo Imprezowe Zakupy',
-        },
-        {
-          ...dawPar,
-          url: '#',
-          alt: 'Logo DawPar',
-        },
-      ],
     },
     offer: {
       header: 'oferta',
@@ -263,12 +124,6 @@ const Home: FC<IHome> = (props) => {
         background={content.about.background}
         header={content.about.header}
       />
-      <Collaboration
-        background={content.collab.background}
-        header={content.collab.header}
-        rtl={content.collab.rtl}
-        ltr={content.collab.ltr}
-      />
       <Offer
         header={content.offer.header}
         title={content.offer.title}
@@ -309,20 +164,6 @@ export const query = graphql`
         }
       }
     }
-    backgroundCollab: file(name: {eq: "team"}) {
-      name
-      childImageSharp {
-        fixed(width: 1920) {
-          aspectRatio
-          srcWebp
-          srcSetWebp
-          src
-          srcSet
-          height
-          width
-        }
-      }
-    }
     backgroundAbout: file(name: {eq: "background-about"}) {
       name
       childImageSharp {
@@ -334,126 +175,6 @@ export const query = graphql`
           srcSet
           height
           width
-        }
-      }
-    }
-    higher: file(name: {eq: "higher"}) {
-      name
-      childImageSharp {
-        fixed(height: 80) {
-          height
-          src
-          srcSet
-          width
-          aspectRatio
-        }
-      }
-    }
-    termoRex: file(name: {eq: "termo-rex"}) {
-      name
-      childImageSharp {
-        fixed(height: 80) {
-          height
-          src
-          srcSet
-          width
-          aspectRatio
-        }
-      }
-    }
-    investSteel: file(name: {eq: "invest-steel"}) {
-      name
-      childImageSharp {
-        fixed(height: 80) {
-          height
-          src
-          srcSet
-          width
-          aspectRatio
-        }
-      }
-    }
-    imprezoweZakupy: file(name: {eq: "imprezowe-zakupy"}) {
-      name
-      childImageSharp {
-        fixed(height: 80) {
-          height
-          src
-          srcSet
-          width
-          aspectRatio
-        }
-      }
-    }
-    odziezDlaMedyka: file(name: {eq: "odziez-dla-medyka"}) {
-      name
-      childImageSharp {
-        fixed(height: 80) {
-          height
-          src
-          srcSet
-          width
-          aspectRatio
-        }
-      }
-    }
-    weddingStore: file(name: {eq: "wedding-store"}) {
-      name
-      childImageSharp {
-        fixed(height: 80) {
-          height
-          src
-          srcSet
-          width
-          aspectRatio
-        }
-      }
-    }
-    albi: file(name: {eq: "albi"}) {
-      name
-      childImageSharp {
-        fixed(height: 80) {
-          height
-          src
-          srcSet
-          width
-          aspectRatio
-        }
-      }
-    }
-    dawPar: file(name: {eq: "daw-par"}) {
-      name
-      childImageSharp {
-        fixed(height: 80) {
-          height
-          src
-          srcSet
-          width
-          aspectRatio
-        }
-      }
-    }
-    elastolab: file(name: {eq: "elastolab"}) {
-      name
-      childImageSharp {
-        fixed(height: 80) {
-          height
-          src
-          srcSet
-          width
-          aspectRatio
-        }
-      }
-    }
-    gbu: file(name: {eq: "gbu"}) {
-      name
-      childImageSharp {
-        fixed(height: 80) {
-          height
-          src
-          srcSet
-          width
-          aspectRatio
         }
       }
     }
