@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { FixedObject, FluidObject } from 'gatsby-image';
+import { FixedObject } from 'gatsby-image';
 import { graphql } from 'gatsby';
 
 import { Start } from 'components/start/Start.component';
@@ -31,37 +31,61 @@ interface IHome {
     higher: {
       name: string;
       childImageSharp: {
-        fluid: FluidObject
+        fluid: FixedObject
       }
     }
     termoRex: {
       name: string;
       childImageSharp: {
-        fluid: FluidObject
+        fluid: FixedObject
       }
     }
     investSteel: {
       name: string;
       childImageSharp: {
-        fluid: FluidObject
+        fluid: FixedObject
       }
     }
     imprezoweZakupy: {
       name: string;
       childImageSharp: {
-        fluid: FluidObject
+        fluid: FixedObject
       }
     }
     odziezDlaMedyka: {
       name: string;
       childImageSharp: {
-        fluid: FluidObject
+        fluid: FixedObject
       }
     }
     weddingStore: {
       name: string;
       childImageSharp: {
-        fluid: FluidObject
+        fluid: FixedObject
+      }
+    }
+    albi: {
+      name: string;
+      childImageSharp: {
+        fluid: FixedObject
+      }
+    }
+    dawPar: {
+      name: string;
+      childImageSharp: {
+        fluid: FixedObject
+      }
+    }
+    elastolab: {
+      name: string;
+      childImageSharp: {
+        fluid: FixedObject
+      }
+    }
+    gbu: {
+      name: string;
+      childImageSharp: {
+        fluid: FixedObject
       }
     }
   }
@@ -79,6 +103,10 @@ const Home: FC<IHome> = (props) => {
       weddingStore,
       odziezDlaMedyka,
       imprezoweZakupy,
+      albi,
+      elastolab,
+      dawPar,
+      gbu,
     },
   } = props;
 
@@ -110,12 +138,12 @@ const Home: FC<IHome> = (props) => {
         alt: 'zespół ludzi',
       },
       header: 'zaufali nam między innymi',
-      logos: [
-        {
-          ...higher,
-          url: 'http://higher.com.pl',
-          alt: 'Logo Higher',
-        },
+      rtl: [
+        // {
+        //   ...higher,
+        //   url: 'http://higher.com.pl',
+        //   alt: 'Logo Higher',
+        // },
         {
           ...investSteel,
           url: 'http://investsteel.pl/wspolpraca/',
@@ -125,6 +153,28 @@ const Home: FC<IHome> = (props) => {
           ...termoRex,
           url: 'https://termo-rex.pl/',
           alt: 'Logo TermoRex',
+        },
+        {
+          ...odziezDlaMedyka,
+          url: 'https://odziezdlamedyka.pl/',
+          alt: 'Logo Odzież Dla Medyka',
+        },
+        {
+          ...elastolab,
+          url: '#',
+          alt: 'Logo Elastolab',
+        },
+        {
+          ...gbu,
+          url: '#',
+          alt: 'Logo GBU',
+        },
+      ],
+      ltr: [
+        {
+          ...albi,
+          url: '#',
+          alt: 'Logo Albi',
         },
         {
           ...weddingStore,
@@ -137,9 +187,14 @@ const Home: FC<IHome> = (props) => {
           alt: 'Logo Imprezowe Zakupy',
         },
         {
-          ...odziezDlaMedyka,
-          url: 'https://odziezdlamedyka.pl/',
-          alt: 'Logo Odzież Dla Medyka',
+          ...imprezoweZakupy,
+          url: 'https://imprezowezakupy.pl/',
+          alt: 'Logo Imprezowe Zakupy',
+        },
+        {
+          ...dawPar,
+          url: '#',
+          alt: 'Logo DawPar',
         },
       ],
     },
@@ -216,7 +271,8 @@ const Home: FC<IHome> = (props) => {
       <Collaboration
         background={content.collab.background}
         header={content.collab.header}
-        logos={content.collab.logos}
+        rtl={content.collab.rtl}
+        ltr={content.collab.ltr}
       />
       <Offer
         header={content.offer.header}
@@ -243,120 +299,168 @@ const Home: FC<IHome> = (props) => {
 export default Home;
 
 export const query = graphql`
-query GetPhotos {
-  backgroundStart: file(name: {eq: "background-start"}) {
-    name
-    childImageSharp {
-      fixed(width: 1920) {
-        aspectRatio
-        srcWebp
-        srcSetWebp
-        src
-        srcSet
-        height
-        width
+  query GetPhotos {
+    backgroundStart: file(name: {eq: "background-start"}) {
+      name
+      childImageSharp {
+        fixed(width: 1920) {
+          aspectRatio
+          srcWebp
+          srcSetWebp
+          src
+          srcSet
+          height
+          width
+        }
+      }
+    }
+    backgroundCollab: file(name: {eq: "team"}) {
+      name
+      childImageSharp {
+        fixed(width: 1920) {
+          aspectRatio
+          srcWebp
+          srcSetWebp
+          src
+          srcSet
+          height
+          width
+        }
+      }
+    }
+    backgroundAbout: file(name: {eq: "background-about"}) {
+      name
+      childImageSharp {
+        fixed(width: 1920, quality: 100) {
+          aspectRatio
+          srcWebp
+          srcSetWebp
+          src
+          srcSet
+          height
+          width
+        }
+      }
+    }
+    higher: file(name: {eq: "higher"}) {
+      name
+      childImageSharp {
+        fixed(height: 80) {
+          height
+          src
+          srcSet
+          width
+          aspectRatio
+        }
+      }
+    }
+    termoRex: file(name: {eq: "termo-rex"}) {
+      name
+      childImageSharp {
+        fixed(height: 80) {
+          height
+          src
+          srcSet
+          width
+          aspectRatio
+        }
+      }
+    }
+    investSteel: file(name: {eq: "invest-steel"}) {
+      name
+      childImageSharp {
+        fixed(height: 80) {
+          height
+          src
+          srcSet
+          width
+          aspectRatio
+        }
+      }
+    }
+    imprezoweZakupy: file(name: {eq: "imprezowe-zakupy"}) {
+      name
+      childImageSharp {
+        fixed(height: 80) {
+          height
+          src
+          srcSet
+          width
+          aspectRatio
+        }
+      }
+    }
+    odziezDlaMedyka: file(name: {eq: "odziez-dla-medyka"}) {
+      name
+      childImageSharp {
+        fixed(height: 80) {
+          height
+          src
+          srcSet
+          width
+          aspectRatio
+        }
+      }
+    }
+    weddingStore: file(name: {eq: "wedding-store"}) {
+      name
+      childImageSharp {
+        fixed(height: 80) {
+          height
+          src
+          srcSet
+          width
+          aspectRatio
+        }
+      }
+    }
+    albi: file(name: {eq: "albi"}) {
+      name
+      childImageSharp {
+        fixed(height: 80) {
+          height
+          src
+          srcSet
+          width
+          aspectRatio
+        }
+      }
+    }
+    dawPar: file(name: {eq: "daw-par"}) {
+      name
+      childImageSharp {
+        fixed(height: 80) {
+          height
+          src
+          srcSet
+          width
+          aspectRatio
+        }
+      }
+    }
+    elastolab: file(name: {eq: "elastolab"}) {
+      name
+      childImageSharp {
+        fixed(height: 80) {
+          height
+          src
+          srcSet
+          width
+          aspectRatio
+        }
+      }
+    }
+    gbu: file(name: {eq: "gbu"}) {
+      name
+      childImageSharp {
+        fixed(height: 80) {
+          height
+          src
+          srcSet
+          width
+          aspectRatio
+        }
       }
     }
   }
-  backgroundCollab: file(name: {eq: "team"}) {
-    name
-    childImageSharp {
-      fixed(width: 1920) {
-        aspectRatio
-        srcWebp
-        srcSetWebp
-        src
-        srcSet
-        height
-        width
-      }
-    }
-  }
-  backgroundAbout: file(name: {eq: "background-about"}) {
-    name
-    childImageSharp {
-      fixed(width: 1920, quality: 100) {
-        aspectRatio
-        srcWebp
-        srcSetWebp
-        src
-        srcSet
-        height
-        width
-      }
-    }
-  }
-  higher: file(name: {eq: "higher"}) {
-    name
-    childImageSharp {
-      fluid(quality: 100) {
-        src
-        srcSet
-        base64
-        aspectRatio
-        sizes
-      }
-    }
-  }
-  termoRex: file(name: {eq: "termo-rex"}) {
-    name
-    childImageSharp {
-      fluid(quality: 100) {
-        src
-        srcSet
-        base64
-        aspectRatio
-        sizes
-      }
-    }
-  }
-  investSteel: file(name: {eq: "invest-steel"}) {
-    name
-    childImageSharp {
-      fluid(quality: 100) {
-        src
-        srcSet
-        base64
-        aspectRatio
-        sizes
-      }
-    }
-  }
-  imprezoweZakupy: file(name: {eq: "imprezowe-zakupy"}) {
-    name
-    childImageSharp {
-      fluid(quality: 100) {
-        src
-        srcSet
-        base64
-        aspectRatio
-        sizes
-      }
-    }
-  }
-  odziezDlaMedyka: file(name: {eq: "odziez-dla-medyka"}) {
-    name
-    childImageSharp {
-      fluid(quality: 100) {
-        src
-        srcSet
-        base64
-        aspectRatio
-        sizes
-      }
-    }
-  }
-  weddingStore: file(name: {eq: "wedding-store"}) {
-    name
-    childImageSharp {
-      fluid(quality: 100) {
-        src
-        srcSet
-        base64
-        aspectRatio
-        sizes
-      }
-    }
-  }
-}
 `;

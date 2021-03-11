@@ -14,53 +14,49 @@ interface ICollaboration {
     img: FixedObject,
     alt: string,
   };
-  logos: LogoData[]
+  rtl: LogoData[]
+  ltr: LogoData[]
   header: string;
 }
 
-export const Collaboration: FC<ICollaboration> = ({ background, header, logos }) => {
-  const refLogosWrapper = useRef<HTMLDivElement>(null);
+export const Collaboration: FC<ICollaboration> = ({ header, rtl, ltr }) => {
+  const refRTL = useRef<HTMLDivElement>(null);
+  const refLTR = useRef<HTMLDivElement>(null);
   const refCollab = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (refLogosWrapper.current && refCollab.current) {
+    if (refRTL.current && refLTR.current && refCollab.current) {
+      let rtlWidth = 0;
+      let ltrWidth = 0;
+
+      rtl.forEach(element => {
+        rtlWidth += element.childImageSharp.fixed.width;
+      });
+
+      ltr.forEach(element => {
+        ltrWidth += element.childImageSharp.fixed.width;
+      });
+      
       gsap.registerPlugin(ScrollTrigger);
 
-      const allLogos = refLogosWrapper.current.children;
-
-      gsap.set(allLogos, {
-        autoAlpha: 0,
-        xPercent: (index) => {
-          if (index % 2 === 0) {
-            return -20;
-          } else {
-            return 20;
-          }
-        },
-      });
-
-      gsap.to(allLogos, {
-        autoAlpha: 1,
-        xPercent: 0,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: refCollab.current,
-          start: '40% 100%',
-          once: true,
-        },
-        stagger: .5,
-
-      });
 
     }
-  }, [refLogosWrapper.current, refCollab.current]);
-
+  }, []);
   return (
     <section className={s.collaboration} ref={refCollab} id={'collaboration'}>
       <SectionHeader content={header} />
 
       <div className={s.collaboration__wrapper}>
-        
+        <div className={s.collaboration__rtlWrapper}>
+          <div className={s.collaboration__rtl} ref={refRTL}>
+
+          </div>
+        </div>
+        <div className={s.collaboration__ltlWrapper} ref={refLTR}>
+          <div className={s.collaboration__ltr}>
+
+          </div>
+        </div>
       </div>
 
     </section>
