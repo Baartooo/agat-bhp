@@ -187,11 +187,6 @@ const Home: FC<IHome> = (props) => {
           alt: 'Logo Imprezowe Zakupy',
         },
         {
-          ...imprezoweZakupy,
-          url: 'https://imprezowezakupy.pl/',
-          alt: 'Logo Imprezowe Zakupy',
-        },
-        {
           ...dawPar,
           url: '#',
           alt: 'Logo DawPar',
