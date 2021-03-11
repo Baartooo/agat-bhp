@@ -2,7 +2,7 @@ import favicon from 'assets/images/favicon.png';
 import share from 'assets/images/share.jpg';
 
 const title = 'Agat BHP';
-const description = 'Kompleksowa obsługa BHP i PPOŻ';
+const description = 'AGAT BHP Agnieszka Gajos - Gwarantujemy kompleksową i profesjonalną obsługę BHP obejmującą wszystkie aspekty związane z bezpieczeństwem i higieną pracy w różnorodnych przedsiębiorstwach, dzięki którym bezpieczeństwo Twojej firmy będzie w najlepszych rękach.';
 
 export const helmet = {
   title,

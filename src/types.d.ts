@@ -1,4 +1,4 @@
-import { FluidObject } from 'gatsby-image';
+import { FixedObject } from 'gatsby-image';
 
 export type StartContent = {
   firstLine: string,
@@ -15,7 +15,7 @@ export type NavigationContent = {
 export type LogoData = {
   name: string;
   childImageSharp: {
-    fluid: FluidObject
+    fixed: FixedObject
   }
   url: string;
   alt: string;
