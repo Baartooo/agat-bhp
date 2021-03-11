@@ -1,0 +1,69 @@
+@import "src/styles/config";
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+
+  padding: 0 20px;
+
+  width: 100%;
+  height: 70px;
+
+  align-items: center;
+  justify-content: space-between;
+
+  visibility: hidden;
+
+  z-index: 500;
+
+  @media (min-width: $min-tablet) {
+    justify-content: flex-start;
+  }
+}
+
+.navigation__logo {
+  display: flex;
+
+  margin-right: 75px;
+
+  width: 65px;
+  min-width: 65px;
+  height: auto;
+
+  align-items: center;
+
+  &Svg {
+    width: 100%;
+    height: auto;
+
+    path {
+      fill: $color-white;
+    }
+  }
+}
+
+.navigation__hamburger {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 35px;
+  height: 25px;
+
+  cursor: pointer;
+}
+
+.navigation__bar {
+  width: 100%;
+  height: 5px;
+
+  background-color: $color-white;
+
+  @media (min-width: $min-tablet) {
+    display: none;
+  }
+}

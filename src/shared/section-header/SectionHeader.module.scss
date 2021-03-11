@@ -1,0 +1,33 @@
+@import "src/styles/config";
+
+.section-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+
+  padding: 10px 0;
+
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(90deg, $color-white-half-transparent, $color-white-transparent);
+
+  z-index: 200;
+}
+
+.section-header__content {
+  @include rf(20, 30);
+
+  display: block;
+
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  text-shadow: -5px 5px 10px rgba(0, 0, 0, .3);
+}

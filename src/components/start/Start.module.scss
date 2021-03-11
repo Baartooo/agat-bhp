@@ -1,0 +1,76 @@
+@import "src/styles/config";
+
+.start {
+  position: relative;
+
+  height: 100vh;
+  width: 100%;
+}
+
+.start__background {
+  position: relative;
+
+  height: 100vh;
+}
+
+.start__background-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.start__background-overlay {
+  @include fit;
+
+  background-color: $color-start-overlay;
+}
+
+.start__welcome {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translate(-50%, -50%);
+}
+
+.start__logo {
+  display: block;
+  margin-bottom: 20px;
+
+  width: 40vw;
+  visibility: hidden;
+
+  @media (min-width: $min-mobile) {
+    width: 30vw;
+  }
+
+  @media (min-width: $min-tablet) {
+    margin-bottom: 30px;
+
+    width: 20vw;
+  }
+
+  &Svg {
+    width: 100%;
+    height: auto;
+
+  }
+}
+
+.start__title {
+  @include rf(16, 40);
+  margin-bottom: 10px;
+
+  font-weight: 700;
+
+  text-shadow: -5px 5px 10px rgba(0, 0, 0, .7);
+
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+
+  visibility: hidden;
+}
